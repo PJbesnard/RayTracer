@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+math.h
+-
+vector
+-
+
+/home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp
+stdio.h
+-
+iostream
+-
+vector
+-
+Vector.h
+/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+
