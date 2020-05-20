@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+/home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.cpp
+Vector.h
+/home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.h
+
+/home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.h
 math.h
 -
 vector
 -
 
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp
+/home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/test.cpp
 stdio.h
 -
 iostream
@@ -20,5 +24,5 @@ iostream
 vector
 -
 Vector.h
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+/home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.h
 

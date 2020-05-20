@@ -1,4 +1,4 @@
-# Install script for directory: /home/pierrejean/Bureau/SYNTHESE/projet_SI
+# Install script for directory: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pierrejean/Bureau/SYNTHESE/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pierrejean/Bureau/Projects/Synthese/RayTracer/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

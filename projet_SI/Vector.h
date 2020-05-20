@@ -44,6 +44,8 @@ Vector operator+(const Vector& a, const Vector &b);
 
 Vector operator-(const Vector& a, const Vector &b);
 
+Vector operator-(const Vector& a);
+
 Vector operator*(double a, const Vector &b);
 
 Vector operator*(const Vector &b, double a);
@@ -62,9 +64,9 @@ public:
 
 class Sphere {
 public:
-	Sphere(const Vector &origin, double rayon, const Vector& couleur) : O(origin), R(rayon), albedo(couleur){};
+	Sphere(const Vector &origin, double rayon, const Vector& couleur, bool is_mirror, bool is_transparent) : O(origin), R(rayon), albedo(couleur), is_mirror(is_mirror), is_transparent(is_transparent) {};
 	
-	bool intersection(const Ray& d, Vector& P, Vector& N, double& t) {
+	bool intersection(const Ray& d, Vector& P, Vector& N, double& t) const{
 		double a = 1;
 		double b = 2 * dot(d.direction, d.origin - O);
 		double c = (d.origin - O).getNorm2() - R * R;
@@ -99,6 +101,8 @@ public:
 	Vector O;
 	double R;
 	Vector albedo;
+	bool is_mirror;
+	bool is_transparent;
 };
 
 class Scene {
@@ -108,9 +112,9 @@ public:
 		spheres.push_back(s);
 	}
 
-	bool intersection(const Ray& d, Vector& P, Vector& N, int& id) {
+	bool intersection(const Ray& d, Vector& P, Vector& N, int& id, double& min) const{
 
-		double min = 1E99;
+		min = 1E99;
 		bool inter = false;
 
 		for(int i = 0; i < spheres.size(); i++){
@@ -131,5 +135,8 @@ public:
 		return inter;
 	}
 
+	// Tous les objets qui composent une scene
 	std::vector<Sphere> spheres;
+	Vector position_lumiere;
+	double intensite_lumiere;
 };

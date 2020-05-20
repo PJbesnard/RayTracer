@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/SYNTHESE/projet_SI
+CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierrejean/Bureau/SYNTHESE
+CMAKE_BINARY_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
