@@ -1,4 +1,6 @@
 #include <math.h>
+#include <stdio.h>
+#include <iostream>
 #include <vector>
 
 class Vector {
@@ -56,6 +58,8 @@ double dot(const Vector& a, const Vector& b);
 
 Vector cross(const Vector&a, const Vector& b);
 
+Vector revert(const Vector &a);
+
 class Ray {
 public:
     Ray(const Vector& o, const Vector& d) : origin(o), direction(d) {};
@@ -108,7 +112,6 @@ public:
 
 	Vector O;
 	double R;
-	//Vector albedo;
 };
 
 /*
@@ -193,7 +196,34 @@ class Cylindre: public Object {
 		Vector O;
 		double R;
 		double H;
-		Vector albedo;
+};
+
+class Rectangle: public Object {
+	public:
+		Rectangle(const Vector& A, const Vector &B, const Vector& C, const Vector& D, const Vector& couleur): Object(couleur), A(A), B(B), C(C), D(D) {};
+
+		bool intersection(const Ray& d, Vector& P, Vector& N, double& t) const {
+			N = cross(B -A, D-A).getNormalized();
+			t = dot(D-d.origin, N) / dot(d.direction, N);
+			P = d.origin + t*d.direction;
+			
+			Vector v1 = (B - A).getNormalized();
+			Vector v2 = (C - B).getNormalized();
+			Vector v3 = (D - C).getNormalized();
+			Vector v4 = (A - D).getNormalized();
+
+			Vector v5 = (P - A).getNormalized();
+			Vector v6 = (P - B).getNormalized();
+			Vector v7 = (P - C).getNormalized();
+			Vector v8 = (P - D).getNormalized();
+			if(dot(v1, v5) < 0) return false;
+			if(dot(v2, v6) < 0) return false;
+			if(dot(v3, v7) < 0) return false;
+			if(dot(v4, v8) < 0) return false;
+			return true;
+		}
+
+		Vector A, B, C, D;
 };
 
 class Triangle: public Object {
@@ -233,7 +263,6 @@ class Triangle: public Object {
 			return true;
 		}
 		Vector A, B, C;
-		Vector albedo;
 };
 
 class Scene {
@@ -246,6 +275,9 @@ public:
 		objects.push_back(&s);
 	}
 	void addCylindre(const Cylindre& s) {
+		objects.push_back(&s);
+	}
+	void addRectangle(const Rectangle& s) {
 		objects.push_back(&s);
 	}
 

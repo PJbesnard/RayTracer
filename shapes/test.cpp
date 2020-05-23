@@ -80,11 +80,14 @@ int main(int argc, char const *argv[]){
 	s.addSphere(s6);
 	s.addSphere(s7);
 
-	Triangle t(Vector(60, 0, -70), Vector(30, 20, -80), Vector(10, 10, -100), Vector(0, 0, 1));
-	s.addTriangle(t);
+	Triangle t(Vector(40, 0, -70), Vector(40, 40, -70), Vector(10, 30, -70), Vector(0, 0, 1));
+	//s.addTriangle(t);
 
 	Cylindre c(Vector(20, -20, -55), 5, 10, Vector(1, 0, 0));
 	s.addCylindre(c);
+
+	Rectangle r(Vector(10, 20, -70), Vector(20, 10, -70), Vector(10, 30, -70), Vector(20, 30, -70), Vector(1, 0, 0));
+	s.addRectangle(r);
 
 	Vector position_lumiere(15, 60, -40); //Notre lumiere
 
