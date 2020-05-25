@@ -83,7 +83,7 @@ int main(int argc, char const *argv[]){
 	Triangle t(Vector(40, 0, -70), Vector(40, 40, -70), Vector(10, 30, -70), Vector(0, 0, 1));
 	//s.addTriangle(t);
 
-	Cylindre c(Vector(20, -20, -55), 5, 10, Vector(1, 0, 0));
+	Cylindre c(Vector(0, -20, -55), 5, 10, Vector(1, 0, 0));
 	s.addCylindre(c);
 
 	Rectangle r(Vector(10, 20, -70), Vector(20, 10, -70), Vector(10, 30, -70), Vector(20, 30, -70), Vector(1, 0, 0));
