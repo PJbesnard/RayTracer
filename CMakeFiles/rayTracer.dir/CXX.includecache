@@ -27,6 +27,8 @@ iostream
 -
 vector
 -
+GL/glut.h
+-
 Vector.h
 /home/louis/Bureau/projet/RayTracer/shapes/Vector.h
 

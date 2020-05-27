@@ -13,7 +13,6 @@ public:
 	const double& operator[](int i) const { 
 		return coord[i]; 
 	}
-
 	/*double& operator[](int i) const { 
 		return coord[i]; 
 	}*/
@@ -166,36 +165,37 @@ class Box {
 };*/
 
 class Cylindre: public Object {
-	public: 
-		Cylindre(const Vector &origin, double rayon, double hauteur, const Vector& couleur) : Object(couleur), O(origin), R(rayon), H(hauteur){};
+    public: 
+        Cylindre(const Vector &origin, double rayon, double hauteur, const Vector& couleur): Object(couleur), O(origin), R(rayon), H(hauteur){};
 
-		bool intersection(const Ray& d, Vector& P, Vector& N, double& t) const {
-			
-			double a = (d.direction[0] * d.direction[0]) + (d.direction[2] * d.direction[2]);
-			double b = 2*(d.direction[0]*(d.origin[0]-O[0]) + d.direction[2]*(d.origin[0]-O[2]));
-			double c = (d.origin[0] - O[0]) * (d.origin[0] - O[0]) + (d.origin[2] - O[2]) * (d.origin[2] - O[2]) - (R*R);
-			
-			double delta = b*b - 4*a*c;
-			if(delta < 0) return false;
-			
-			
-			double t1 = (-b - std::sqrt(delta))/(2*a);
-			double t2 = (-b + std::sqrt(delta))/(2*a);
-			
-			if (t1 <= 0) t = t2;
-			else t = t1;
-			
-			double r = d.origin[1] + t*d.direction[1];
-			P = d.origin + t * d.direction;
-			N = Vector (P[0]-O[0],P[1]-O[1],P[2]-O[2]).getNormalized();
-			
-			if ((r >= O[1]) && (r <= O[1] + H))return true;
-			else return false;
-		}
+        bool intersection(const Ray& d, Vector& P, Vector& N, double& t) const {
 
-		Vector O;
-		double R;
-		double H;
+            double a = (d.direction[0] * d.direction[0]) + (d.direction[2] * d.direction[2]);
+            double b = 2 * (d.direction[0]*(d.origin[0]-O[0]) + d.direction[2]*(d.origin[2]-O[2]));
+            double c = (d.origin[0] - O[0]) * (d.origin[0] - O[0]) + (d.origin[2] - O[2]) * (d.origin[2] - O[2]) - (R*R);
+
+            double delta = b*b - 4*a*c;
+            if(delta < 0) return false;
+
+
+            double t1 = (-b - std::sqrt(delta))/(2*a);
+            double t2 = (-b + std::sqrt(delta))/(2*a);
+
+            if (t1 <= 0) t = t2;
+            else t = t1;
+            if (t < 0) return false;
+
+            double r = d.origin[1] + t*d.direction[1];
+            P = d.origin + t * d.direction;
+            N = Vector (P[0]-O[0],P[1]-O[1],P[2]-O[2]).getNormalized();
+
+            if ((r >= O[1]) && (r <= O[1] + H))return true;
+            else return false;
+        }
+
+        Vector O;
+        double R;
+        double H;
 };
 
 class Rectangle: public Object {
@@ -205,6 +205,7 @@ class Rectangle: public Object {
 		bool intersection(const Ray& d, Vector& P, Vector& N, double& t) const {
 			N = cross(B -A, D-A).getNormalized();
 			t = dot(D-d.origin, N) / dot(d.direction, N);
+			if (t < 0) return false;
 			P = d.origin + t*d.direction;
 			
 			Vector v1 = (B - A).getNormalized();

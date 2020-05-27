@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.1)
 set(CMAKE_CXX_STANDARD 11) # C++11...
 set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
 set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
+set(CMAKE_CXX_FLAGS "-lglut")
 MESSAGE(STATUS "C++11 enabled. ")
 
 
@@ -18,4 +19,4 @@ SET(SRCS
   )
 
 add_executable(rayTracer ${SRCS})
-#target_link_libraries(rayTracer ${wxWidgets_LIBRARIES})
+target_link_libraries(rayTracer "-ljsoncpp -lglut -lGLU -lGL")
