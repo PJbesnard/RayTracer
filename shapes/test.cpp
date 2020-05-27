@@ -64,6 +64,7 @@ int W = 1024;
 //std::vector<unsigned char> image(W * H *3);
 unsigned char image[1024*1024*3];
 double cam[3] = {0, 0, 0};
+double ang[2] = {0, 0};
 Scene s;
 
 void display() {
@@ -82,7 +83,7 @@ void intersect(){
 
 	for (int i = 0; i < H; i++) {
 		for (int j = 0; j < W; j++) {
-			Vector direction(j - W / 2, i - H / 2, - W / (2 * tan(fov / 2)));
+			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1] , - W / (2 * tan(fov / 2)));
 			direction.normalize();
 
 			//Ray r(Vector(0, 0, 0), direction);
@@ -133,6 +134,48 @@ void keyBoard(unsigned char key, int x, int y){
 			std::cout << "on bouge à droite " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
 			isMoving = true;
 			cam[0] += 10;
+			break;
+
+		case 'a':
+		case 'A':
+			std::cout << "on recule " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
+			isMoving = true;
+			cam[2] += -10;
+			break;
+
+		case 'e':
+		case 'E':
+			std::cout << "on avance " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
+			isMoving = true;
+			cam[2] += 10;
+			break;
+
+		case 'j':
+		case 'J':
+			std::cout << "on tourne l'angle a gauche " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
+			isMoving = true;
+			ang[0] += -100;
+			break;
+
+		case 'l':
+		case 'L':
+			std::cout << "on tourne l'angle a droite " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
+			isMoving = true;
+			ang[0] += 100;
+			break;
+
+		case 'i':
+		case 'I':
+			std::cout << "on leve la tete " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
+			isMoving = true;
+			ang[1] += -100;
+			break;
+
+		case 'k':
+		case 'K':
+			std::cout << "on baisse la tete " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
+			isMoving = true;
+			ang[1] += 100;
 			break;
 
 		default:
