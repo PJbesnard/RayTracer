@@ -106,6 +106,35 @@ void intersect(){
 	glutDisplayFunc(display);
 }
 
+void intersect1(){
+	double fov = 90 * M_PI / 180; // angle de vue
+
+	Vector position_lumiere(15, 60, -40); //Notre lumiere
+
+	double intensite_lumiere = 1000000; // plus la lumiere est intense plus ça va briller
+
+	for (int i = 0; i < H; i++) {
+		for (int j = 0; j < W; j++) {
+			Vector direction((j - W / 2), (i - H / 2), - W / (2 * tan(fov / 2)));
+			direction.normalize();
+
+			Ray r(Vector(0, 0, 0), direction);
+			int id;
+			Vector P, N;
+			bool has_inter = s.intersection(r, P, N, id);
+
+			Vector intensite_pixel(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
+			if (has_inter) {
+				intensite_pixel = s.objects[id]->albedo;
+			}
+
+			image[((H - i - 1) * W + j) * 3 + 0] = intensite_pixel[0] * 255; // rouge 
+			image[((H - i - 1) * W + j) * 3 + 1] = intensite_pixel[1] * 255; // vert
+			image[((H - i - 1) * W + j) * 3 + 2] = intensite_pixel[2] * 255; // bleu
+		}
+	}
+}
+
 void keyBoard(unsigned char key, int x, int y){
 	bool isMoving = false;
 	switch(key){
@@ -188,15 +217,16 @@ void keyBoard(unsigned char key, int x, int y){
 	}
 }
 
-void createScene(){
-	
+void createWindow(int argc, char *argv[]){
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE);
+	glutInitWindowSize(W, H);
+	glutCreateWindow("first");
+	gluLookAt(-100., -200., -100., -100., -100., -100., -100., -51., -100.);
 }
 
 int main(int argc, char *argv[]){
-	/*parsing command line*/
-	
 	CLI::App app{"In computer graphics, ray tracing is a rendering technique for generating an image by tracing the path of light as pixels in an image plane and simulating the effects of its encounters with virtual objects.\n This project allows to create scenes using raytracing."};
-	//app.require_subcommand(1);
 	int number = 1;
     app.add_option("-n,--number", number, "Wich level number of the project you want to use. Must be between 1 and 3.");
 	int pixelsampling;
@@ -205,35 +235,8 @@ int main(int argc, char *argv[]){
 	app.add_option("-i,--input", file, "File name that you want to use. This file needs to be in json format.");
 	std::string outputName;
 	app.add_option("-o,--output", outputName, "File name of the output image")->required();
-    CLI11_PARSE(app, argc, argv);
-	//outputName.append(".ppm");
-    //return 0;
-
-
-
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE);
-	glutInitWindowSize(W, H);
-	//glutInitWindowPosition(100, 100);
-	glutCreateWindow("first");
-	gluLookAt(-100., -200., -100., -100., -100., -100., -100., -51., -100.);
-
-	switch(number) {
-		case 1:
-			//TODO
-			break;
-		case 2:
-			//TODO
-			break;
-		case 3:
-			//TODO
-			break;
-		default:
-			std::cout << "Number " << number << " isn't a valid number. Must be 1, 2, or 3 \n";
-			return 0;
-	}
+	CLI11_PARSE(app, argc, argv);
 	
-
 	Sphere s1(Vector(0, 0, -55), 20, Vector(1, 0, 0)); // (coord par rapport à la caméra) puis rayons
 	Sphere s2(Vector(0, -2000-20, 0), 2000, Vector(1, 1, 1)); // (coord par rapport à la caméra) puis rayons
 	Sphere s3(Vector(0, 2000+100, 0), 2000, Vector(1, 1, 1)); // (coord par rapport à la caméra) puis rayons
@@ -259,16 +262,28 @@ int main(int argc, char *argv[]){
 	Rectangle r(Vector(10, 20, -70), Vector(20, 10, -70), Vector(10, 30, -70), Vector(20, 30, -70), Vector(1, 0, 0));
 	s.addRectangle(r);
 
-	intersect();
+	switch(number) {
+		case 1:
+			intersect1();
+			std::cout << "image " << outputName.c_str() << " created" << std::endl;
+			break;
+		case 2:
+			//TODO
+			break;
+		case 3:
+			//TODO
+			break;
+		default:
+			std::cout << "Number " << number << " isn't a valid number. Must be 1, 2, or 3 \n";
+			return 0;
+	}
 	
 	save_img(outputName.c_str(), &image[0], W, H);
 
-	std::cout << "hello" << std::endl;
-
-	
+	/*
     //glutDisplayFunc(display);
 	glutKeyboardFunc(keyBoard);
-	glutMainLoop();
+	glutMainLoop();*/
 
 	return 0;
 }
