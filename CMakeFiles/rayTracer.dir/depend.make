@@ -5,5 +5,6 @@ CMakeFiles/rayTracer.dir/Vector.cpp.o: shapes/Vector.cpp
 CMakeFiles/rayTracer.dir/Vector.cpp.o: shapes/Vector.h
 
 CMakeFiles/rayTracer.dir/test.cpp.o: shapes/Vector.h
+CMakeFiles/rayTracer.dir/test.cpp.o: shapes/include/CLI11.hpp
 CMakeFiles/rayTracer.dir/test.cpp.o: shapes/test.cpp
 

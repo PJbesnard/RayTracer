@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <GL/glut.h>
+#include "include/CLI11.hpp"
 #include "Vector.h"
 
 void save_img(const char* filename, const unsigned char* pixels, int W, int H) {
@@ -187,13 +188,50 @@ void keyBoard(unsigned char key, int x, int y){
 	}
 }
 
+void createScene(){
+	
+}
+
 int main(int argc, char *argv[]){
+	/*parsing command line*/
+	
+	CLI::App app{"In computer graphics, ray tracing is a rendering technique for generating an image by tracing the path of light as pixels in an image plane and simulating the effects of its encounters with virtual objects.\n This project allows to create scenes using raytracing."};
+	//app.require_subcommand(1);
+	int number = 1;
+    app.add_option("-n,--number", number, "Wich level number of the project you want to use. Must be between 1 and 3.");
+	int pixelsampling;
+	app.add_option("-p, --pixelsampling", pixelsampling, "Number of pixel sampling that you want.");
+	std::string file = "defaut";
+	app.add_option("-i,--input", file, "File name that you want to use. This file needs to be in json format.");
+	std::string outputName;
+	app.add_option("-o,--output", outputName, "File name of the output image")->required();
+    CLI11_PARSE(app, argc, argv);
+	//outputName.append(".ppm");
+    //return 0;
+
+
+
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
 	glutInitWindowSize(W, H);
 	//glutInitWindowPosition(100, 100);
 	glutCreateWindow("first");
 	gluLookAt(-100., -200., -100., -100., -100., -100., -100., -51., -100.);
+
+	switch(number) {
+		case 1:
+			//TODO
+			break;
+		case 2:
+			//TODO
+			break;
+		case 3:
+			//TODO
+			break;
+		default:
+			std::cout << "Number " << number << " isn't a valid number. Must be 1, 2, or 3 \n";
+			return 0;
+	}
 	
 
 	Sphere s1(Vector(0, 0, -55), 20, Vector(1, 0, 0)); // (coord par rapport à la caméra) puis rayons
@@ -222,8 +260,8 @@ int main(int argc, char *argv[]){
 	s.addRectangle(r);
 
 	intersect();
-
-	save_img("output.ppm", &image[0], W, H);
+	
+	save_img(outputName.c_str(), &image[0], W, H);
 
 	std::cout << "hello" << std::endl;
 
@@ -234,5 +272,3 @@ int main(int argc, char *argv[]){
 
 	return 0;
 }
-
-
