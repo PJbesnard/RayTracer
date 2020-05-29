@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.cpp
+Vector.h
+/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+
 /home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
 math.h
 -

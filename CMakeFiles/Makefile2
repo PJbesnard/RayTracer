@@ -59,45 +59,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI
+CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/SYNTHESE/projet_SI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer
+CMAKE_BINARY_DIR = /home/pierrejean/Bureau/SYNTHESE
 
 #=============================================================================
-# Target rules for target CMakeFiles/rayTracer.dir
+# Target rules for target CMakeFiles/raytracer.dir
 
 # All Build rule for target.
-CMakeFiles/rayTracer.dir/all:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/depend
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles --progress-num=1,2,3 "Built target rayTracer"
-.PHONY : CMakeFiles/rayTracer.dir/all
+CMakeFiles/raytracer.dir/all:
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/depend
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pierrejean/Bureau/SYNTHESE/CMakeFiles --progress-num=1,2,3 "Built target raytracer"
+.PHONY : CMakeFiles/raytracer.dir/all
 
 # Include target in all.
-all: CMakeFiles/rayTracer.dir/all
+all: CMakeFiles/raytracer.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/rayTracer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rayTracer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles 0
-.PHONY : CMakeFiles/rayTracer.dir/rule
+CMakeFiles/raytracer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/raytracer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles 0
+.PHONY : CMakeFiles/raytracer.dir/rule
 
 # Convenience name for target.
-rayTracer: CMakeFiles/rayTracer.dir/rule
+raytracer: CMakeFiles/raytracer.dir/rule
 
-.PHONY : rayTracer
-
-# clean rule for target.
-CMakeFiles/rayTracer.dir/clean:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/clean
-.PHONY : CMakeFiles/rayTracer.dir/clean
+.PHONY : raytracer
 
 # clean rule for target.
-clean: CMakeFiles/rayTracer.dir/clean
+CMakeFiles/raytracer.dir/clean:
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/clean
+.PHONY : CMakeFiles/raytracer.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/raytracer.dir/clean
 
 .PHONY : clean
 

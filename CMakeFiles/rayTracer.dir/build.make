@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI
+CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/SYNTHESE/projet_SI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer
+CMAKE_BINARY_DIR = /home/pierrejean/Bureau/SYNTHESE
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rayTracer.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/rayTracer.dir/flags.make
 
 CMakeFiles/rayTracer.dir/Vector.cpp.o: CMakeFiles/rayTracer.dir/flags.make
 CMakeFiles/rayTracer.dir/Vector.cpp.o: projet_SI/Vector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rayTracer.dir/Vector.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rayTracer.dir/Vector.cpp.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pierrejean/Bureau/SYNTHESE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rayTracer.dir/Vector.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rayTracer.dir/Vector.cpp.o -c /home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.cpp
 
 CMakeFiles/rayTracer.dir/Vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rayTracer.dir/Vector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.cpp > CMakeFiles/rayTracer.dir/Vector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.cpp > CMakeFiles/rayTracer.dir/Vector.cpp.i
 
 CMakeFiles/rayTracer.dir/Vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rayTracer.dir/Vector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/Vector.cpp -o CMakeFiles/rayTracer.dir/Vector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.cpp -o CMakeFiles/rayTracer.dir/Vector.cpp.s
 
 CMakeFiles/rayTracer.dir/test.cpp.o: CMakeFiles/rayTracer.dir/flags.make
 CMakeFiles/rayTracer.dir/test.cpp.o: projet_SI/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rayTracer.dir/test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rayTracer.dir/test.cpp.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pierrejean/Bureau/SYNTHESE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rayTracer.dir/test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rayTracer.dir/test.cpp.o -c /home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp
 
 CMakeFiles/rayTracer.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rayTracer.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/test.cpp > CMakeFiles/rayTracer.dir/test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp > CMakeFiles/rayTracer.dir/test.cpp.i
 
 CMakeFiles/rayTracer.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rayTracer.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI/test.cpp -o CMakeFiles/rayTracer.dir/test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp -o CMakeFiles/rayTracer.dir/test.cpp.s
 
 # Object files for target rayTracer
 rayTracer_OBJECTS = \
@@ -95,7 +95,7 @@ rayTracer: CMakeFiles/rayTracer.dir/Vector.cpp.o
 rayTracer: CMakeFiles/rayTracer.dir/test.cpp.o
 rayTracer: CMakeFiles/rayTracer.dir/build.make
 rayTracer: CMakeFiles/rayTracer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable rayTracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pierrejean/Bureau/SYNTHESE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable rayTracer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rayTracer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/rayTracer.dir/clean:
 .PHONY : CMakeFiles/rayTracer.dir/clean
 
 CMakeFiles/rayTracer.dir/depend:
-	cd /home/pierrejean/Bureau/Projects/Synthese/RayTracer && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI /home/pierrejean/Bureau/Projects/Synthese/RayTracer /home/pierrejean/Bureau/Projects/Synthese/RayTracer /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/rayTracer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pierrejean/Bureau/SYNTHESE && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pierrejean/Bureau/SYNTHESE/projet_SI /home/pierrejean/Bureau/SYNTHESE/projet_SI /home/pierrejean/Bureau/SYNTHESE /home/pierrejean/Bureau/SYNTHESE /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/rayTracer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rayTracer.dir/depend
 

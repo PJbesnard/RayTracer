@@ -1,0 +1,104 @@
+{
+	
+	"spheres" : [
+		{
+			"axe" : [-15, 0, 10],
+			"rayon" : 5,
+			"couleur" : [1, 1, 1],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [0, -2020, 0],
+			"rayon" : 2000,
+			"couleur" : [1, 1, 1],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [0, 2100, 0],
+			"rayon" : 2000,
+			"couleur" : [1, 1, 1],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [-2050, 0, 0],
+			"rayon" : 2000,
+			"couleur" : [0, 1, 0],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [2050, 0, 0],
+			"rayon" : 2000,
+			"couleur" : [0, 0, 1],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [0, 0, -2100],
+			"rayon" : 2000,
+			"couleur" : [0, 1, 1],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.0
+		},
+		{
+			"axe" : [18, 0, -50],
+			"rayon" : 5,
+			"couleur" : [1, 1, 1],
+			"mirror" : 0,
+			"glass" : 1,
+			"spec" : 0.0
+		}
+	],
+	
+	"rectangles" : [
+		{
+			"c1" : [10, 20, -70],
+			"c2" : [20, 10, -70],
+			"c3" : [10, 30, -70],
+			"c4" : [20, 30, -70],
+			"couleur" : [1, 0, 0],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.3
+		}
+	],
+
+	"triangles" : [
+		{
+			"c1" : [0, 0, -70],
+			"c2" : [0, 40, -70],
+			"c3" : [-30, 30, -70],
+			"couleur" : [1, 0, 0],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.3
+		}
+	],
+
+	"cylindres" : [
+		{
+			"axe" : [-30, -20, -70],
+			"rayon" : 10,
+			"hauteur" : 30,
+			"couleur" : [3, 2, 0],
+			"mirror" : 0,
+			"glass" : 0,
+			"spec" : 0.3
+		}
+	],
+
+	"intensite_lumiere" : 1000000000,
+	"position_lumiere" : [15, 60, -40],
+	"fov" : 90
+	
+
+}

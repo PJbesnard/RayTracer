@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/3.13.4/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/pierrejean/Bureau/SYNTHESE/CMakeFiles/3.13.4/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/3.13.4/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/pierrejean/Bureau/SYNTHESE/CMakeFiles/3.13.4/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8d663/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8d663.dir/build.make CMakeFiles/cmTC_8d663.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_8d663.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_8d663.dir/testCCompiler.c.o   -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_8d663
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d663.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8d663.dir/testCCompiler.c.o  -o cmTC_8d663 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_bfe09/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bfe09.dir/build.make CMakeFiles/cmTC_bfe09.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_bfe09.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bfe09.dir/testCCompiler.c.o   -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_bfe09
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bfe09.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bfe09.dir/testCCompiler.c.o  -o cmTC_bfe09 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f5b5c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f5b5c.dir/build.make CMakeFiles/cmTC_f5b5c.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_f5b5c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5b5c.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o  -o cmTC_f5b5c 
+Run Build Command:"/usr/bin/make" "cmTC_6ed19/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6ed19.dir/build.make CMakeFiles/cmTC_6ed19.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_6ed19
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ed19.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o  -o cmTC_6ed19 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 8.3.0 (Debian 8.3.0-6) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f5b5c' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccq7R900.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_f5b5c /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f5b5c' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6ed19' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cceoML0L.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed19 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6ed19' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f5b5c/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f5b5c.dir/build.make CMakeFiles/cmTC_f5b5c.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »]
-  ignore line: [Building C object CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_f5b5c]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5b5c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o  -o cmTC_f5b5c ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_6ed19/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_6ed19.dir/build.make CMakeFiles/cmTC_6ed19.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_6ed19]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ed19.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o  -o cmTC_6ed19 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 8.3.0 (Debian 8.3.0-6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f5b5c' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccq7R900.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_f5b5c /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6ed19' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cceoML0L.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed19 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccq7R900.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cceoML0L.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f5b5c] ==> ignore
+    arg [cmTC_6ed19] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o] ==> ignore
@@ -124,7 +124,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..]
-    arg [CMakeFiles/cmTC_f5b5c.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_6ed19.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -154,17 +154,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ed7e8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ed7e8.dir/build.make CMakeFiles/cmTC_ed7e8.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_ed7e8.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ed7e8.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ed7e8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed7e8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ed7e8.dir/feature_tests.c.o  -o cmTC_ed7e8 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_6f761/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6f761.dir/build.make CMakeFiles/cmTC_6f761.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_6f761.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_6f761.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6f761
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f761.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6f761.dir/feature_tests.c.o  -o cmTC_6f761 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -174,17 +174,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_abe24/fast"
-/usr/bin/make -f CMakeFiles/cmTC_abe24.dir/build.make CMakeFiles/cmTC_abe24.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_abe24.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_abe24.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.c
-Linking C executable cmTC_abe24
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abe24.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_abe24.dir/feature_tests.c.o  -o cmTC_abe24 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_62cd3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_62cd3.dir/build.make CMakeFiles/cmTC_62cd3.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_62cd3.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_62cd3.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.c
+Linking C executable cmTC_62cd3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62cd3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_62cd3.dir/feature_tests.c.o  -o cmTC_62cd3 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -194,17 +194,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_98ec4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_98ec4.dir/build.make CMakeFiles/cmTC_98ec4.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_98ec4.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_98ec4.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.c
-Linking C executable cmTC_98ec4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98ec4.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_98ec4.dir/feature_tests.c.o  -o cmTC_98ec4 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_7e178/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7e178.dir/build.make CMakeFiles/cmTC_7e178.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_7e178.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_7e178.dir/feature_tests.c.o   -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.c
+Linking C executable cmTC_7e178
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7e178.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7e178.dir/feature_tests.c.o  -o cmTC_7e178 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -212,30 +212,30 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_22072/fast"
-/usr/bin/make -f CMakeFiles/cmTC_22072.dir/build.make CMakeFiles/cmTC_22072.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_22072.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_22072.dir/testCXXCompiler.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_22072
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22072.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_22072.dir/testCXXCompiler.cxx.o  -o cmTC_22072 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_8e1cf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8e1cf.dir/build.make CMakeFiles/cmTC_8e1cf.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_8e1cf.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_8e1cf.dir/testCXXCompiler.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_8e1cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e1cf.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8e1cf.dir/testCXXCompiler.cxx.o  -o cmTC_8e1cf 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b43ae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b43ae.dir/build.make CMakeFiles/cmTC_b43ae.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_b43ae
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b43ae.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b43ae 
+Run Build Command:"/usr/bin/make" "cmTC_9e1e2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9e1e2.dir/build.make CMakeFiles/cmTC_9e1e2.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_9e1e2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e1e2.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_9e1e2 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper
@@ -247,24 +247,24 @@ Thread model: posix
 gcc version 8.3.0 (Debian 8.3.0-6) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b43ae' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cclZjVnA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b43ae /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b43ae' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9e1e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKZrRIl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9e1e2 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9e1e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_b43ae/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_b43ae.dir/build.make CMakeFiles/cmTC_b43ae.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »]
-  ignore line: [Building CXX object CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_b43ae]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b43ae.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b43ae ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9e1e2/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_9e1e2.dir/build.make CMakeFiles/cmTC_9e1e2.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »]
+  ignore line: [Building CXX object CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_9e1e2]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e1e2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_9e1e2 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper]
@@ -276,13 +276,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 8.3.0 (Debian 8.3.0-6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b43ae' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cclZjVnA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b43ae /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9e1e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKZrRIl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9e1e2 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cclZjVnA.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccKZrRIl.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -298,7 +298,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_b43ae] ==> ignore
+    arg [cmTC_9e1e2] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o] ==> ignore
@@ -310,7 +310,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..]
-    arg [CMakeFiles/cmTC_b43ae.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_9e1e2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -336,17 +336,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++2a] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e8571/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e8571.dir/build.make CMakeFiles/cmTC_e8571.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_e8571.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++2a -o CMakeFiles/cmTC_e8571.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e8571
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8571.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e8571.dir/feature_tests.cxx.o  -o cmTC_e8571 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_8508e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8508e.dir/build.make CMakeFiles/cmTC_8508e.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_8508e.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++2a -o CMakeFiles/cmTC_8508e.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8508e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8508e.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8508e.dir/feature_tests.cxx.o  -o cmTC_8508e 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -409,17 +409,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting CXX [-std=c++17] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6f767/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6f767.dir/build.make CMakeFiles/cmTC_6f767.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_6f767.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++17 -o CMakeFiles/cmTC_6f767.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_6f767
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f767.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6f767.dir/feature_tests.cxx.o  -o cmTC_6f767 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_f7e2c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f7e2c.dir/build.make CMakeFiles/cmTC_f7e2c.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_f7e2c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++17 -o CMakeFiles/cmTC_f7e2c.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f7e2c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7e2c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_f7e2c.dir/feature_tests.cxx.o  -o cmTC_f7e2c 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -482,17 +482,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e07ef/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e07ef.dir/build.make CMakeFiles/cmTC_e07ef.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_e07ef.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_e07ef.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e07ef
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e07ef.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e07ef.dir/feature_tests.cxx.o  -o cmTC_e07ef 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_3a5da/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3a5da.dir/build.make CMakeFiles/cmTC_3a5da.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_3a5da.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_3a5da.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3a5da
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a5da.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3a5da.dir/feature_tests.cxx.o  -o cmTC_3a5da 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -555,17 +555,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_85e5d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85e5d.dir/build.make CMakeFiles/cmTC_85e5d.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_85e5d.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_85e5d.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_85e5d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85e5d.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_85e5d.dir/feature_tests.cxx.o  -o cmTC_85e5d 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_bb26a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bb26a.dir/build.make CMakeFiles/cmTC_bb26a.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_bb26a.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_bb26a.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_bb26a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb26a.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_bb26a.dir/feature_tests.cxx.o  -o cmTC_bb26a 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -628,17 +628,17 @@ make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthes
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp
+Change Dir: /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_edcc5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_edcc5.dir/build.make CMakeFiles/cmTC_edcc5.dir/build
-make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_edcc5.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_edcc5.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_edcc5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edcc5.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_edcc5.dir/feature_tests.cxx.o  -o cmTC_edcc5 
-make[1] : on quitte le répertoire « /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_b6135/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b6135.dir/build.make CMakeFiles/cmTC_b6135.dir/build
+make[1] : on entre dans le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_b6135.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_b6135.dir/feature_tests.cxx.o -c /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b6135
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6135.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b6135.dir/feature_tests.cxx.o  -o cmTC_b6135 
+make[1] : on quitte le répertoire « /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

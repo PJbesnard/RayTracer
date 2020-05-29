@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer/projet_SI
+CMAKE_SOURCE_DIR = /home/pierrejean/Bureau/SYNTHESE/projet_SI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierrejean/Bureau/Projects/Synthese/RayTracer
+CMAKE_BINARY_DIR = /home/pierrejean/Bureau/SYNTHESE
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles /home/pierrejean/Bureau/SYNTHESE/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/Projects/Synthese/RayTracer/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierrejean/Bureau/SYNTHESE/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rayTracer
+# Target rules for targets named raytracer
 
 # Build rule for target.
-rayTracer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rayTracer
-.PHONY : rayTracer
+raytracer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 raytracer
+.PHONY : raytracer
 
 # fast build rule for target.
-rayTracer/fast:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/build
-.PHONY : rayTracer/fast
+raytracer/fast:
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/build
+.PHONY : raytracer/fast
 
 Vector.o: Vector.cpp.o
 
@@ -129,7 +129,7 @@ Vector.o: Vector.cpp.o
 
 # target to build an object file
 Vector.cpp.o:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/Vector.cpp.o
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/Vector.cpp.o
 .PHONY : Vector.cpp.o
 
 Vector.i: Vector.cpp.i
@@ -138,7 +138,7 @@ Vector.i: Vector.cpp.i
 
 # target to preprocess a source file
 Vector.cpp.i:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/Vector.cpp.i
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/Vector.cpp.i
 .PHONY : Vector.cpp.i
 
 Vector.s: Vector.cpp.s
@@ -147,7 +147,7 @@ Vector.s: Vector.cpp.s
 
 # target to generate assembly for a file
 Vector.cpp.s:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/Vector.cpp.s
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/Vector.cpp.s
 .PHONY : Vector.cpp.s
 
 test.o: test.cpp.o
@@ -156,7 +156,7 @@ test.o: test.cpp.o
 
 # target to build an object file
 test.cpp.o:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/test.cpp.o
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/test.cpp.o
 .PHONY : test.cpp.o
 
 test.i: test.cpp.i
@@ -165,7 +165,7 @@ test.i: test.cpp.i
 
 # target to preprocess a source file
 test.cpp.i:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/test.cpp.i
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/test.cpp.i
 .PHONY : test.cpp.i
 
 test.s: test.cpp.s
@@ -174,7 +174,7 @@ test.s: test.cpp.s
 
 # target to generate assembly for a file
 test.cpp.s:
-	$(MAKE) -f CMakeFiles/rayTracer.dir/build.make CMakeFiles/rayTracer.dir/test.cpp.s
+	$(MAKE) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/test.cpp.s
 .PHONY : test.cpp.s
 
 # Help Target
@@ -184,7 +184,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... rayTracer"
+	@echo "... raytracer"
 	@echo "... edit_cache"
 	@echo "... Vector.o"
 	@echo "... Vector.i"
