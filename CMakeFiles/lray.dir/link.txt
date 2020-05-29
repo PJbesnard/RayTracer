@@ -1,1 +1,0 @@
-/usr/bin/c++  -ljsoncpp  -rdynamic CMakeFiles/lray.dir/Vector.cpp.o CMakeFiles/lray.dir/test.cpp.o  -o lray -ljsoncpp -lglut -lGLU -lGL 

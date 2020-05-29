@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/Vector.cpp
+Vector.h
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/Vector.h
+
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/Vector.h
 math.h
 -
 vector
@@ -16,7 +20,7 @@ random
 iostream
 -
 
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/include/CLI11.hpp
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/include/CLI11.hpp
 algorithm
 -
 cmath
@@ -70,7 +74,7 @@ sys/stat.h
 sys/types.h
 -
 
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/test.cpp
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/test.cpp
 stdio.h
 -
 iostream
@@ -80,9 +84,9 @@ vector
 GL/glut.h
 -
 include/CLI11.hpp
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/include/CLI11.hpp
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/include/CLI11.hpp
 Vector.h
-/home/pierrejean/Bureau/SYNTHESE/projet_SI/Vector.h
+/home/louis/Bureau/projet/final/RayTracer/projet_SI/Vector.h
 fstream
 -
 string

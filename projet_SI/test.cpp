@@ -13,6 +13,7 @@ int H = 1024;
 int W = 1024;
 //std::vector<unsigned char> image(W * H *3);
 unsigned char image[1024*1024*3];
+unsigned char imageGL[1024 * 1024 * 3];
 double cam[3] = {0, 0, 0};
 double ang[2] = {0, 0};
 Scene s;
@@ -114,11 +115,10 @@ void save_img(const char* filename, const unsigned char* pixels, int W, int H) {
 	fclose(f);
 }
 
-
-
 void display() {
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
+	/*
     unsigned char image2[1024 * 1024 * 3];
     for (int i = 0; i < H; i++) {
         for (int j = 0; j < W; j++) {
@@ -126,8 +126,8 @@ void display() {
             image2[((H - i - 1) * W + j) * 3 + 1] = image[((H - (H - i - 1) - 1) * W + j) * 3 + 1]; // vert
             image2[((H - i - 1) * W + j) * 3 + 2] = image[((H - (H - i - 1) - 1) * W + j) * 3 + 2]; // bleu
         }
-    }
-    glDrawPixels(W,H,GL_RGB,GL_UNSIGNED_BYTE, image2);
+    }*/
+    glDrawPixels(W,H,GL_RGB,GL_UNSIGNED_BYTE, imageGL);
     glFlush();
 }
 
@@ -303,8 +303,6 @@ void intersect3(int pixelsampling){
 
 }
 
-
-
 void intersect2(){
 	double fov = fov_cam * M_PI / 180; // angle de vue
 	int intensite_lum = s.intensite_lumiere / 1000;
@@ -328,6 +326,32 @@ void intersect2(){
 			image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., intensite_pixel[0])); // rouge 
 			image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., intensite_pixel[1])); // vert
 			image[((H - i - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., intensite_pixel[2])); // bleu
+		}
+	}
+}
+
+void intersect2GL(){
+	double fov = fov_cam * M_PI / 180; // angle de vue
+	int intensite_lum = s.intensite_lumiere / 1000;
+	for (int i = 0; i < H; i++) {
+		for (int j = 0; j < W; j++) {
+			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1] , - W / (2 * tan(fov / 2)));
+			direction.normalize();
+
+			Ray r(Vector(cam[0], cam[1], cam[2]), direction);
+			int id;
+			Vector P, N;
+			double min;
+			bool has_inter = s.intersection(r, P, N, id, min);
+
+			Vector intensite_pixel = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
+			if (has_inter) {
+				intensite_pixel = s.objects[id]->albedo * (intensite_lum * std::max(0., dot((position_lumiere - P).getNormalized(), N))) / (position_lumiere - P).getNorm2();
+			}
+
+			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., intensite_pixel[0])); // rouge 
+			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., intensite_pixel[1])); // vert
+			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., intensite_pixel[2])); // bleu
 		}
 	}
 	glutDisplayFunc(display);
@@ -436,7 +460,7 @@ void keyBoard(unsigned char key, int x, int y){
 			break;
 	}
 	if(isMoving){
-		intersect2();
+		intersect2GL();
 		glutPostRedisplay();
 	}
 }
@@ -470,6 +494,7 @@ int main(int argc, char *argv[]){
 		case 2:
 			createWindow(argc, argv);
 			intersect2();
+			intersect2GL();
 			break;
 		case 3:
 			intersect3(pixelsampling);

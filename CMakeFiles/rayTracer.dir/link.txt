@@ -1,1 +1,0 @@
-/usr/bin/c++  -ljsoncpp  -rdynamic CMakeFiles/rayTracer.dir/Vector.cpp.o CMakeFiles/rayTracer.dir/test.cpp.o  -o rayTracer -ljsoncpp -lglut -lGLU -lGL 
