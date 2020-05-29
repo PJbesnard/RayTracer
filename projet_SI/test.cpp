@@ -8,18 +8,15 @@
 #include <string>
 #include <jsoncpp/json/json.h>
 
-
 int H = 1024;
 int W = 1024;
-//std::vector<unsigned char> image(W * H *3);
 unsigned char image[1024*1024*3];
 unsigned char imageGL[1024 * 1024 * 3];
 double cam[3] = {0, 0, 0};
 double ang[2] = {0, 0};
 Scene s;
-Vector position_lumiere;
+Vector light_position;
 int fov_cam;
-
 
 void read_scene_file(const char* filename){
 	std::ifstream file(filename);
@@ -30,7 +27,7 @@ void read_scene_file(const char* filename){
 	const Json::Value& spheres = obj["spheres"];
 	const Json::Value& rectangles = obj["rectangles"];
 	const Json::Value& triangles = obj["triangles"];
-	const Json::Value& cylindres = obj["cylindres"];
+	const Json::Value& cylinders = obj["cylinders"];
 
 	const Json::Value& intensite_lumiere = obj["intensite_lumiere"];
 	const Json::Value& position_lum = obj["position_lumiere"];
@@ -53,7 +50,7 @@ void read_scene_file(const char* filename){
 	}
 	
 	s.intensite_lumiere = intensite_lumiere.asInt();
-	position_lumiere = position_lum[0].asInt(), position_lum[1].asInt(), position_lum[2].asInt();
+	light_position = position_lum[0].asInt(), position_lum[1].asInt(), position_lum[2].asInt();
 	fov_cam = fov.asInt();
 
 
@@ -80,13 +77,12 @@ void read_scene_file(const char* filename){
 		s.addTriangle(s7);
 	}
 
-	for (int i = 0; i < cylindres.size(); i++){ 
-
-		bool mirror = cylindres[i]["mirror"].asInt() == 1;
-		bool glass = cylindres[i]["glass"].asInt() == 1;
-		Vector color(cylindres[i]["couleur"][0].asInt(), cylindres[i]["couleur"][1].asInt(), cylindres[i]["couleur"][2].asInt());
-		Vector origin(cylindres[i]["axe"][0].asInt(), cylindres[i]["axe"][1].asInt(), cylindres[i]["axe"][2].asInt());
-		Cylindre* s8 = new Cylindre(origin, cylindres[i]["rayon"].asInt(), cylindres[i]["hauteur"].asInt(), color, mirror, glass, cylindres[i]["spec"].asDouble());
+	for (int i = 0; i < cylinders.size(); i++){ 
+		bool mirror = cylinders[i]["mirror"].asInt() == 1;
+		bool glass = cylinders[i]["glass"].asInt() == 1;
+		Vector color(cylinders[i]["couleur"][0].asInt(), cylinders[i]["couleur"][1].asInt(), cylinders[i]["couleur"][2].asInt());
+		Vector origin(cylinders[i]["axe"][0].asInt(), cylinders[i]["axe"][1].asInt(), cylinders[i]["axe"][2].asInt());
+		Cylindre* s8 = new Cylindre(origin, cylinders[i]["rayon"].asInt(), cylinders[i]["hauteur"].asInt(), color, mirror, glass, cylinders[i]["spec"].asDouble());
 		s.addCylindre(s8);
 	}
 	
@@ -95,7 +91,6 @@ void read_scene_file(const char* filename){
 }
 
 void save_img(const char* filename, const unsigned char* pixels, int W, int H) {
-
 	FILE* f = fopen(filename, "wb");
 	fprintf(f, "P3\n");  
 	fprintf(f, "%d %d\n", W, H);
@@ -118,15 +113,6 @@ void save_img(const char* filename, const unsigned char* pixels, int W, int H) {
 void display() {
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
-	/*
-    unsigned char image2[1024 * 1024 * 3];
-    for (int i = 0; i < H; i++) {
-        for (int j = 0; j < W; j++) {
-            image2[((H - i - 1) * W + j) * 3 + 0] = image[((H - (H - i - 1) - 1) * W + j) * 3 + 0]; // rouge 
-            image2[((H - i - 1) * W + j) * 3 + 1] = image[((H - (H - i - 1) - 1) * W + j) * 3 + 1]; // vert
-            image2[((H - i - 1) * W + j) * 3 + 2] = image[((H - (H - i - 1) - 1) * W + j) * 3 + 2]; // bleu
-        }
-    }*/
     glDrawPixels(W,H,GL_RGB,GL_UNSIGNED_BYTE, imageGL);
     glFlush();
 }
@@ -135,13 +121,11 @@ void display() {
  	return n * n;
  }
 
-
 double Phong_BRDF(const Vector& wi, const Vector& wo, const Vector& N, double phong_exposant){
 	Vector reflechi = wo.reflect(N);
 	double lobe = std::pow(dot(reflechi, wi), phong_exposant) * (phong_exposant + 2) / (2. * M_PI);
 	return lobe;
 }
-
 
 // const enmpeche de faire une copie locale
 // On fait une fonction recursive pour calculer la reflexion des surfaces
@@ -158,7 +142,6 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 	Vector intensite_pixel(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
 
 	if (has_inter) {
-
 		//On check  la nature de la forme que croise le rayon
 		if (s.objects[id] -> is_mirror){
 			Vector direction_mirroir = r.direction.reflect(N);
@@ -264,122 +247,93 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 			else{
 				intensite_pixel = intensite_pixel + getColor(random_ray, s, recursion + 1) * dot(N, random_direction) * Phong_BRDF(random_direction, r.direction, N, s.objects[id] -> phong_exposant) * s.objects[id] -> ks * s.objects[id] -> albedo / proba_globale;
 			}
-			
 		}
-
-
 	}
-
 	return intensite_pixel;
 }
 
-void intersect3(int pixelsampling){
-	int nb_sampling = pixelsampling;
-	double fov = fov_cam * M_PI / 180; // angle de vue
-#pragma cmp parallel for
-	for (int i = 0; i < H; i++) {
-		for (int j = 0; j < W; j++) {
-			// methode de Box Muller (anti-alliasing) ->PIXEL SAMPLING
-			// créé un nombre aléatoire qui suit une gaussienne, ça permet d'envoyer un rayon pas forcement au centre
-			double r1 = uniform(generator);
-			double r2 = uniform(generator);
-			double dx = sqrt(-2 * log(r1)) * cos(2 * M_PI * r2);
-			double dy = sqrt(-2 * log(r1)) * sin(2 * M_PI * r2);
-			Vector direction(j - W / 2 + 0.5 * dx , i - H / 2 + 0.5 * dy, - W / (2 * tan(fov / 2)));
-			direction.normalize();
-
-			Ray r(Vector(0, 0, 0), direction);
-			Vector color(0., 0., 0.);
-			for (int i = 0; i < nb_sampling; i++){
-				color = color + (getColor(r, s) / nb_sampling);
-			} 
-
-			image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., std::pow(color[0], 1 / 2.2))); // rouge 
-			image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., std::pow(color[1], 1 / 2.2))); // vert
-			image[((H - i - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., std::pow(color[2], 1 / 2.2))); // bleu
-			// Le power permet de faire une correction gamma, ça permet de rendre les couleures claires plus basses car l'oeil humain y est plus sensible
-		}
+void createImage1(int i, int j, double fov, bool has_inter, int id){
+	Vector pixel_intensity(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
+	if (has_inter) {
+		pixel_intensity = s.objects[id]->albedo;
 	}
-
+	image[((H - i - 1) * W + j) * 3 + 0] = pixel_intensity[0] * 255; // rouge 
+	image[((H - i - 1) * W + j) * 3 + 1] = pixel_intensity[1] * 255; // vert
+	image[((H - i - 1) * W + j) * 3 + 2] = pixel_intensity[2] * 255; // bleu
 }
 
-void intersect2(){
+void createImage2(int i, int j, double fov, int light_intensity, bool has_inter, int id, Vector& P, Vector& N) {
+	Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
+	if (has_inter) {
+		pixel_intensity = s.objects[id]->albedo * (light_intensity * std::max(0., dot((light_position - P).getNormalized(), N))) / (light_position - P).getNorm2();
+	}
+	image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
+	image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert
+	image[((H - i - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., pixel_intensity[2])); // bleu
+}
+
+void createImageGL(int i, int j, double fov, int light_intensity, bool has_inter, int id, Vector& P, Vector& N){
+	Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
+	if (has_inter) {
+		pixel_intensity = s.objects[id]->albedo * (light_intensity * std::max(0., dot((light_position - P).getNormalized(), N))) / (light_position - P).getNorm2();
+	}
+	imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
+	imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert
+	imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., pixel_intensity[2])); // bleu
+}
+
+void createImage3(int i, int j, double fov, double nb_sampling){
+	// methode de Box Muller (anti-alliasing) ->PIXEL SAMPLING
+	// créé un nombre aléatoire qui suit une gaussienne, ça permet d'envoyer un rayon pas forcement au centre
+	double r1 = uniform(generator);
+	double r2 = uniform(generator);
+	double dx = sqrt(-2 * log(r1)) * cos(2 * M_PI * r2);
+	double dy = sqrt(-2 * log(r1)) * sin(2 * M_PI * r2);
+	Vector direction(j - W / 2 + 0.5 * dx , i - H / 2 + 0.5 * dy, - W / (2 * tan(fov / 2)));
+	direction.normalize();
+	Ray r(Vector(0, 0, 0), direction);
+	Vector color(0., 0., 0.);
+	for (int i = 0; i < nb_sampling; i++){
+		color = color + (getColor(r, s) / nb_sampling);
+	} 
+	image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., std::pow(color[0], 1 / 2.2))); // rouge 
+	image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., std::pow(color[1], 1 / 2.2))); // vert
+	image[((H - i - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., std::pow(color[2], 1 / 2.2))); // bleu
+	// Le power permet de faire une correction gamma, ça permet de rendre les couleures claires plus basses car l'oeil humain y est plus sensible
+}
+
+void intersect(int option, double pixelsampling) {
 	double fov = fov_cam * M_PI / 180; // angle de vue
-	int intensite_lum = s.intensite_lumiere / 1000;
+	int light_intensity = s.intensite_lumiere / 1000;
 	for (int i = 0; i < H; i++) {
 		for (int j = 0; j < W; j++) {
-			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1] , - W / (2 * tan(fov / 2)));
+			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1], - W / (2 * tan(fov / 2)));
 			direction.normalize();
-
-			//Ray r(Vector(0, 0, 0), direction);
-			Ray r(Vector(cam[0], cam[1], cam[2]), direction);
+ 			Ray r(Vector(cam[0], cam[1], cam[2]), direction);
 			int id;
 			Vector P, N;
 			double min;
 			bool has_inter = s.intersection(r, P, N, id, min);
-
-			Vector intensite_pixel = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
-			if (has_inter) {
-				intensite_pixel = s.objects[id]->albedo * (intensite_lum * std::max(0., dot((position_lumiere - P).getNormalized(), N))) / (position_lumiere - P).getNorm2();
+			switch(option) {
+				case 1:
+					createImage1(i, j, fov, has_inter, id);
+					break;
+				case 2:
+					createImage2(i, j, fov, light_intensity, has_inter, id, P, N);
+					break;
+				case 3:
+					createImageGL(i, j, fov, light_intensity, has_inter, id, P, N);
+					break;
+				case 4:
+					createImage3(i, j, fov, pixelsampling);
+					break;
+				default:
+					return;
 			}
-
-			image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., intensite_pixel[0])); // rouge 
-			image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., intensite_pixel[1])); // vert
-			image[((H - i - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., intensite_pixel[2])); // bleu
 		}
 	}
-}
-
-void intersect2GL(){
-	double fov = fov_cam * M_PI / 180; // angle de vue
-	int intensite_lum = s.intensite_lumiere / 1000;
-	for (int i = 0; i < H; i++) {
-		for (int j = 0; j < W; j++) {
-			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1] , - W / (2 * tan(fov / 2)));
-			direction.normalize();
-
-			Ray r(Vector(cam[0], cam[1], cam[2]), direction);
-			int id;
-			Vector P, N;
-			double min;
-			bool has_inter = s.intersection(r, P, N, id, min);
-
-			Vector intensite_pixel = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
-			if (has_inter) {
-				intensite_pixel = s.objects[id]->albedo * (intensite_lum * std::max(0., dot((position_lumiere - P).getNormalized(), N))) / (position_lumiere - P).getNorm2();
-			}
-
-			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., intensite_pixel[0])); // rouge 
-			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., intensite_pixel[1])); // vert
-			imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 2] = std::min(255., std::max(0., intensite_pixel[2])); // bleu
-		}
-	}
-	glutDisplayFunc(display);
-}
-
-void intersect1(){
-	double fov = fov_cam * M_PI / 180; // angle de vue
-
-	for (int i = 0; i < H; i++) {
-		for (int j = 0; j < W; j++) {
-			Vector direction((j - W / 2), (i - H / 2), - W / (2 * tan(fov / 2)));
-			direction.normalize();
-
-			Ray r(Vector(0, 0, 0), direction);
-			int id;
-			Vector P, N;
-			double min;
-			bool has_inter = s.intersection(r, P, N, id, min);
-
-			Vector intensite_pixel(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
-			if (has_inter) {
-				intensite_pixel = s.objects[id]->albedo;
-			}
-
-			image[((H - i - 1) * W + j) * 3 + 0] = intensite_pixel[0] * 255; // rouge 
-			image[((H - i - 1) * W + j) * 3 + 1] = intensite_pixel[1] * 255; // vert
-			image[((H - i - 1) * W + j) * 3 + 2] = intensite_pixel[2] * 255; // bleu
-		}
+	if(option == 3){
+		glutDisplayFunc(display);
 	}
 }
 
@@ -388,79 +342,59 @@ void keyBoard(unsigned char key, int x, int y){
 	switch(key){
 		case 'z':
 		case 'Z':
-			std::cout << "on bouge au dessus" << std::endl;
 			isMoving = true;
 			cam[1] += 10;
 			break;
-
 		case 'q':
 		case 'Q':
-			std::cout << "on bouge à gauche" << std::endl;
 			isMoving = true;
 			cam[0] += -10;
 			break;
-
 		case 's':
 		case 'S':
-			std::cout << "on bouge en bas" << std::endl;
 			isMoving = true;
 			cam[1] += -10;
 			break;
-
 		case 'd':
 		case 'D':
-			std::cout << "on bouge à droite " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
 			isMoving = true;
 			cam[0] += 10;
 			break;
-
 		case 'a':
 		case 'A':
-			std::cout << "on recule " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
 			isMoving = true;
 			cam[2] += -10;
 			break;
-
 		case 'e':
 		case 'E':
-			std::cout << "on avance " << cam[0] << " " << cam[1] << " " << cam[2] << std::endl;
 			isMoving = true;
 			cam[2] += 10;
 			break;
-
 		case 'j':
 		case 'J':
-			std::cout << "on tourne l'angle a gauche " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
 			isMoving = true;
 			ang[0] += -100;
 			break;
-
 		case 'l':
 		case 'L':
-			std::cout << "on tourne l'angle a droite " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
 			isMoving = true;
 			ang[0] += 100;
 			break;
-
 		case 'i':
 		case 'I':
-			std::cout << "on leve la tete " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
 			isMoving = true;
 			ang[1] += 100;
 			break;
-
 		case 'k':
 		case 'K':
-			std::cout << "on baisse la tete " << ang[0] << " " << ang[1] << " " << ang[2] << std::endl;
 			isMoving = true;
 			ang[1] += -100;
 			break;
-
 		default:
 			break;
 	}
 	if(isMoving){
-		intersect2GL();
+		intersect(3, 1);
 		glutPostRedisplay();
 	}
 }
@@ -473,11 +407,26 @@ void createWindow(int argc, char *argv[]){
 	gluLookAt(-100., -200., -100., -100., -100., -100., -100., -51., -100.);
 }
 
+void keyboard_help() {
+	std::cout << "you can use the keyboard keys to move around the image. Keys are as follows: " << std::endl;
+	std::cout << "\t z, move up" << std::endl;
+	std::cout << "\t s, move down" << std::endl;
+	std::cout << "\t d, move right" << std::endl;
+	std::cout << "\t q, move left" << std::endl;
+	std::cout << "\t a, move forward" << std::endl;
+	std::cout << "\t e, move backward" << std::endl;
+	std::cout << "Following keys allow to change camera direction: " << std::endl;
+	std::cout << "\t i, look up" << std::endl;
+	std::cout << "\t k, look down" << std::endl;
+	std::cout << "\t l, look right" << std::endl;
+	std::cout << "\t j, look left" << std::endl;
+}
+
 int main(int argc, char *argv[]){
 	CLI::App app{"In computer graphics, ray tracing is a rendering technique for generating an image by tracing the path of light as pixels in an image plane and simulating the effects of its encounters with virtual objects.\n This project allows to create scenes using raytracing."};
 	int number = 1;
     app.add_option("-n,--number", number, "Wich level number of the project you want to use. Must be between 1 and 3.");
-	int pixelsampling = 1;
+	double pixelsampling = 1;
 	app.add_option("-p, --pixelsampling", pixelsampling, "Number of pixel sampling that you want.");
 	std::string file = "defaut";
 	app.add_option("-i,--input", file, "File name that you want to use. This file needs to be in json format.");
@@ -489,15 +438,16 @@ int main(int argc, char *argv[]){
 
 	switch(number) {
 		case 1:
-			intersect1();
+			intersect(1, pixelsampling);
 			break;
 		case 2:
 			createWindow(argc, argv);
-			intersect2();
-			intersect2GL();
+			keyboard_help();
+			intersect(2, pixelsampling);
+			intersect(3, pixelsampling);
 			break;
 		case 3:
-			intersect3(pixelsampling);
+			intersect(4, pixelsampling);
 			break;
 		default:
 			std::cout << "Number " << number << " isn't a valid number. Must be 1, 2, or 3 \n";
@@ -506,6 +456,7 @@ int main(int argc, char *argv[]){
 	
 	save_img(outputName.c_str(), &image[0], W, H);
 	std::cout << "image " << outputName.c_str() << " created" << std::endl;
+
 	if(number == 2){
 		glutKeyboardFunc(keyBoard);
 		glutMainLoop();
