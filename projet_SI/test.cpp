@@ -15,9 +15,10 @@ unsigned char imageGL[1024 * 1024 * 3];
 double cam[3] = {0, 0, 0};
 double ang[2] = {0, 0};
 Scene s;
-Vector light_position;
+Vector light_position_value;
 int fov_cam;
 
+/*
 void read_scene_file(const char* filename){
 	std::ifstream file(filename);
 	Json::Reader reader;
@@ -27,7 +28,7 @@ void read_scene_file(const char* filename){
 	const Json::Value& spheres = obj["spheres"];
 	const Json::Value& rectangles = obj["rectangles"];
 	const Json::Value& triangles = obj["triangles"];
-	const Json::Value& cylinders = obj["cylinders"];
+	const Json::Value& cylindres = obj["cylindres"];
 
 	const Json::Value& intensite_lumiere = obj["intensite_lumiere"];
 	const Json::Value& position_lum = obj["position_lumiere"];
@@ -39,17 +40,17 @@ void read_scene_file(const char* filename){
 		Vector axe(spheres[i]["axe"][0].asInt(), spheres[i]["axe"][1].asInt(), spheres[i]["axe"][2].asInt());
 		int rayon = spheres[i]["rayon"].asInt();
 		Vector color(spheres[i]["couleur"][0].asInt(), spheres[i]["couleur"][1].asInt(), spheres[i]["couleur"][2].asInt());
-		double ks = spheres[i]["spec"].asDouble();
-		Sphere* s5 = new Sphere(axe, rayon, color, mirror, glass, ks);
+		double spec = spheres[i]["spec"].asDouble();
+		Sphere* s5 = new Sphere(axe, rayon, color, mirror, glass, spec);
 		s.addSphere(s5);
 		if (i == 0){
 			s.addSphere(s5);
-			s.lumiere = s5;
+			s.light = s5;
 			continue;
 		} 
 	}
 	
-	s.intensite_lumiere = intensite_lumiere.asInt();
+	s.light_intensity = intensite_lumiere.asInt();
 	light_position = position_lum[0].asInt(), position_lum[1].asInt(), position_lum[2].asInt();
 	fov_cam = fov.asInt();
 
@@ -77,16 +78,98 @@ void read_scene_file(const char* filename){
 		s.addTriangle(s7);
 	}
 
-	for (int i = 0; i < cylinders.size(); i++){ 
-		bool mirror = cylinders[i]["mirror"].asInt() == 1;
-		bool glass = cylinders[i]["glass"].asInt() == 1;
-		Vector color(cylinders[i]["couleur"][0].asInt(), cylinders[i]["couleur"][1].asInt(), cylinders[i]["couleur"][2].asInt());
-		Vector origin(cylinders[i]["axe"][0].asInt(), cylinders[i]["axe"][1].asInt(), cylinders[i]["axe"][2].asInt());
-		Cylindre* s8 = new Cylindre(origin, cylinders[i]["rayon"].asInt(), cylinders[i]["hauteur"].asInt(), color, mirror, glass, cylinders[i]["spec"].asDouble());
-		s.addCylindre(s8);
+	for (int i = 0; i < cylindres.size(); i++){ 
+		bool mirror = cylindres[i]["mirror"].asInt() == 1;
+		bool glass = cylindres[i]["glass"].asInt() == 1;
+		Vector color(cylindres[i]["couleur"][0].asInt(), cylindres[i]["couleur"][1].asInt(), cylindres[i]["couleur"][2].asInt());
+		Vector origin(cylindres[i]["axe"][0].asInt(), cylindres[i]["axe"][1].asInt(), cylindres[i]["axe"][2].asInt());
+		Cylinder* s8 = new Cylinder(origin, cylindres[i]["rayon"].asInt(), cylindres[i]["hauteur"].asInt(), color, mirror, glass, cylindres[i]["spec"].asDouble());
+		s.addCylinder(s8);
 	}
 	
 	return;
+}*/
+
+void get_rectangles_from_file(Json::Value obj){
+	const Json::Value& rectangles = obj["rectangles"];
+	for (int i = 0; i < rectangles.size(); i++){
+		Vector vec1(rectangles[i]["c1"][0].asInt(), rectangles[i]["c1"][1].asInt(), rectangles[i]["c1"][2].asInt());
+		Vector vec2(rectangles[i]["c2"][0].asInt(), rectangles[i]["c2"][1].asInt(), rectangles[i]["c2"][2].asInt());
+		Vector vec3(rectangles[i]["c3"][0].asInt(), rectangles[i]["c3"][1].asInt(), rectangles[i]["c3"][2].asInt());
+		Vector vec4(rectangles[i]["c4"][0].asInt(), rectangles[i]["c4"][1].asInt(), rectangles[i]["c4"][2].asInt());
+		Vector color(rectangles[i]["color"][0].asInt(), rectangles[i]["color"][1].asInt(), rectangles[i]["color"][2].asInt());
+		bool mirror = rectangles[i]["mirror"].asInt() == 1;
+		bool glass = rectangles[i]["glass"].asInt() == 1;
+		Rectangle* s6 = new Rectangle(vec1, vec2, vec3, vec4, color, mirror, glass, rectangles[i]["spec"].asDouble());
+		s.addRectangle(s6);
+	}
+}
+
+void get_triangles_from_file(Json::Value obj){
+	const Json::Value& triangles = obj["triangles"];
+	for (int i = 0; i < triangles.size(); i++){
+		Vector vec1(triangles[i]["c1"][0].asInt(), triangles[i]["c1"][1].asInt(), triangles[i]["c1"][2].asInt());
+		Vector vec2(triangles[i]["c2"][0].asInt(), triangles[i]["c2"][1].asInt(), triangles[i]["c2"][2].asInt());
+		Vector vec3(triangles[i]["c3"][0].asInt(), triangles[i]["c3"][1].asInt(), triangles[i]["c3"][2].asInt());
+		Vector color(triangles[i]["color"][0].asInt(), triangles[i]["color"][1].asInt(), triangles[i]["color"][2].asInt());
+		bool mirror = triangles[i]["mirror"].asInt() == 1;
+		bool glass = triangles[i]["glass"].asInt() == 1; 
+		Triangle* s7 = new Triangle(vec1, vec2, vec3, color, mirror, glass, triangles[i]["spec"].asDouble());
+		s.addTriangle(s7);
+	}
+}
+
+void get_cylinders_from_file(Json::Value obj){
+	const Json::Value& cylinders = obj["cylinders"];
+	for (int i = 0; i < cylinders.size(); i++){ 
+		bool mirror = cylinders[i]["mirror"].asInt() == 1;
+		bool glass = cylinders[i]["glass"].asInt() == 1;
+		Vector color(cylinders[i]["color"][0].asInt(), cylinders[i]["color"][1].asInt(), cylinders[i]["color"][2].asInt());
+		Vector origin(cylinders[i]["axis"][0].asInt(), cylinders[i]["axis"][1].asInt(), cylinders[i]["axis"][2].asInt());
+		Cylinder* s8 = new Cylinder(origin, cylinders[i]["rayon"].asInt(), cylinders[i]["height"].asInt(), color, mirror, glass, cylinders[i]["spec"].asDouble());
+		s.addCylinder(s8);
+	}
+}
+
+void get_spheres_from_file(Json::Value obj){
+	const Json::Value& spheres = obj["spheres"];
+	for (int i = 0; i < spheres.size(); i++){
+		bool mirror = (spheres[i]["mirror"].asInt() == 1) ? true: false; 
+		bool glass = (spheres[i]["glass"].asInt() == 1) ? true: false;
+		Vector axis(spheres[i]["axis"][0].asInt(), spheres[i]["axis"][1].asInt(), spheres[i]["axis"][2].asInt());
+		int rayon = spheres[i]["rayon"].asInt();
+		Vector color(spheres[i]["color"][0].asInt(), spheres[i]["color"][1].asInt(), spheres[i]["color"][2].asInt());
+		double spec = spheres[i]["spec"].asDouble();
+		Sphere* s5 = new Sphere(axis, rayon, color, mirror, glass, spec);
+		s.addSphere(s5);
+		if (i == 0){
+			s.addSphere(s5);
+			s.light = s5;
+			continue;
+		} 
+	}
+}
+
+void get_light_and_cam_from_file(Json::Value obj){
+	const Json::Value& light_intensity_value = obj["light_intensity"];
+	const Json::Value& light_position = obj["light_position"];
+	const Json::Value& fov = obj["fov"];
+	s.light_intensity = light_intensity_value.asDouble();
+	light_position_value = Vector(light_position[0].asInt(), light_position[1].asInt(), light_position[2].asInt());
+	fov_cam = fov.asInt();
+}
+void read_scene_file(const char* filename){
+	std::ifstream file(filename);
+	Json::Reader reader;
+	Json::Value obj;
+	reader.parse(file, obj);
+	get_spheres_from_file(obj);
+	get_cylinders_from_file(obj);
+	get_triangles_from_file(obj);
+	get_rectangles_from_file(obj);
+	get_light_and_cam_from_file(obj);
+	/*light_position_value = Vector(15, 60, -40);
+	s.light_intensity = 100000000000;*/
 
 }
 
@@ -121,16 +204,18 @@ void display() {
  	return n * n;
  }
 
-double Phong_BRDF(const Vector& wi, const Vector& wo, const Vector& N, double phong_exposant){
+double Phong_BRDF(const Vector& wi, const Vector& wo, const Vector& N, double phong_expo){
 	Vector reflechi = wo.reflect(N);
-	double lobe = std::pow(dot(reflechi, wi), phong_exposant) * (phong_exposant + 2) / (2. * M_PI);
+	double lobe = std::pow(dot(reflechi, wi), phong_expo) * (phong_expo + 2) / (2. * M_PI);
 	return lobe;
 }
+
+Vector getColor(const Ray& r, const Scene& s, int recursion = 0);
 
 // const enmpeche de faire une copie locale
 // On fait une fonction recursive pour calculer la reflexion des surfaces
 // La fonction renvoie la couleur du pixel obtenu en envoyant un rayon R dans la scene S
-Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
+Vector getColor(const Ray& r, const Scene& s, int recursion){
 	if (recursion >= 5){
 		return Vector(0, 0, 0);
 	}
@@ -143,13 +228,13 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 
 	if (has_inter) {
 		//On check  la nature de la forme que croise le rayon
-		if (s.objects[id] -> is_mirror){
+		if (s.shapes[id] -> is_mirror){
 			Vector direction_mirroir = r.direction.reflect(N);
 			Ray rayon_mirroir(P + 0.001 * N, direction_mirroir);
-
 			intensite_pixel = getColor(rayon_mirroir, s, recursion + 1);
 		} 
-		else if (s.objects[id] -> is_transparent){
+		//calcule intensité pixel si transparant
+		else if (s.shapes[id] -> is_transparent){
 			double n1 = 1;
 			double n2 = 1.3;
 			Vector normale_pour_transparence(N);
@@ -177,7 +262,7 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 					R = R0 + (1 - R0) * std::pow(1 - dot(direction_refracte, N), 5);
 				}
 
-				if (uniform(generator) < R){
+				if (generator_rand(generator) < R){
 					new_ray = Ray(P + 0.001 * normale_pour_transparence, r.direction.reflect(N));
 
 				}
@@ -194,13 +279,14 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 
 		} 
 		// Ajout éclairage direct
+		//ni transparent ni miroir
 		else {
 			// On envoi un rayon vers la sphere
-			Vector axeOP = (P - s.lumiere-> O).getNormalized();
+			Vector axeOP = (P - s.light-> O).getNormalizedCopy();
 			Vector dir_aleatoire = random_cos(axeOP);
-			Vector point_aleatoire = dir_aleatoire * s.lumiere -> R + s.lumiere -> O;
-			Vector wi = (point_aleatoire - P).getNormalized();
-			double d_light2 = (point_aleatoire - P).getNorm2();
+			Vector point_aleatoire = dir_aleatoire * s.light -> R + s.light -> O;
+			Vector wi = (point_aleatoire - P).getNormalizedCopy();
+			double d_light2 = (point_aleatoire - P).getNorm();
 			Vector Np = dir_aleatoire; // meme chose
 
 			Ray rayLight(P + 0.01*N , wi); // On envoi un rayon du point vers la lumiere
@@ -215,37 +301,37 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 				intensite_pixel = Vector(0, 0, 0); 
 			}
 			else{
-				intensite_pixel = (s.intensite_lumiere / (4 * M_PI * d_light2) * std::max(0., dot(N, wi)) * dot(Np, -wi) / dot(axeOP, dir_aleatoire)) * (M_PI) * ((1. - s.objects[id] -> ks) * s.objects[id] -> albedo / M_PI + Phong_BRDF(wi, r.direction, N, s.objects[id] -> phong_exposant) * s.objects[id] -> ks * s.objects[id] -> albedo);
+				intensite_pixel = (s.light_intensity / (4 * M_PI * d_light2) * std::max(0., dot(N, wi)) * dot(Np, -wi) / dot(axeOP, dir_aleatoire)) * (M_PI) * ((1. - s.shapes[id] -> spec) * s.shapes[id] -> albedo / M_PI + Phong_BRDF(wi, r.direction, N, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> albedo);
 			}
 
 		// Ajout éclairage indirect 
 			Vector random_direction;
-			double p = 1 - s.objects[id] -> ks;
+			double p = 1 - s.shapes[id] -> spec;
 			bool sample_diffuse;
 			Vector R = r.direction.reflect(N);
 			// On genere soit un echantillon diffut
-			if (uniform(generator) < p){
+			if (generator_rand(generator) < p){
 				sample_diffuse = true;
 				random_direction = random_cos(N);
 			}
 			// Soit une echantillon speculaire
 			else { 
 				sample_diffuse = false;
-				random_direction = random_phong(R, s.objects[id] -> phong_exposant);
+				random_direction = random_phong(R, s.shapes[id] -> phong_expo);
 				if ((dot(random_direction, N) < 0) || (dot(random_direction, R) < 0)) {
 					return Vector(0., 0., 0.);
 				}
 			}
 			Ray random_ray(P + 0.001 * N, random_direction);
 
-			double proba_phong = (s.objects[id] -> phong_exposant + 1) / (2. * M_PI) * std::pow(dot(R, random_direction), s.objects[id] -> phong_exposant);
+			double proba_phong = (s.shapes[id] -> phong_expo + 1) / (2. * M_PI) * std::pow(dot(R, random_direction), s.shapes[id] -> phong_expo);
 			double proba_globale = p * dot(N, random_direction) / (2. * M_PI) + (1. - p) * proba_phong;
 			
 			if (sample_diffuse){
-				intensite_pixel = intensite_pixel + getColor(random_ray, s, recursion + 1) * s.objects[id] -> albedo * dot(N, random_direction) / M_PI / proba_globale;
+				intensite_pixel = intensite_pixel + getColor(random_ray, s, recursion + 1) * s.shapes[id] -> albedo * dot(N, random_direction) / M_PI / proba_globale;
 			}
 			else{
-				intensite_pixel = intensite_pixel + getColor(random_ray, s, recursion + 1) * dot(N, random_direction) * Phong_BRDF(random_direction, r.direction, N, s.objects[id] -> phong_exposant) * s.objects[id] -> ks * s.objects[id] -> albedo / proba_globale;
+				intensite_pixel = intensite_pixel + getColor(random_ray, s, recursion + 1) * dot(N, random_direction) * Phong_BRDF(random_direction, r.direction, N, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> albedo / proba_globale;
 			}
 		}
 	}
@@ -255,7 +341,7 @@ Vector getColor(const Ray& r, const Scene& s, int recursion = 0){
 void createImage1(int i, int j, double fov, bool has_inter, int id){
 	Vector pixel_intensity(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
 	if (has_inter) {
-		pixel_intensity = s.objects[id]->albedo;
+		pixel_intensity = s.shapes[id]->albedo;
 	}
 	image[((H - i - 1) * W + j) * 3 + 0] = pixel_intensity[0] * 255; // rouge 
 	image[((H - i - 1) * W + j) * 3 + 1] = pixel_intensity[1] * 255; // vert
@@ -265,7 +351,7 @@ void createImage1(int i, int j, double fov, bool has_inter, int id){
 void createImage2(int i, int j, double fov, int light_intensity, bool has_inter, int id, Vector& P, Vector& N) {
 	Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
 	if (has_inter) {
-		pixel_intensity = s.objects[id]->albedo * (light_intensity * std::max(0., dot((light_position - P).getNormalized(), N))) / (light_position - P).getNorm2();
+		pixel_intensity = s.shapes[id]->albedo * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
 	}
 	image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
 	image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert
@@ -275,7 +361,7 @@ void createImage2(int i, int j, double fov, int light_intensity, bool has_inter,
 void createImageGL(int i, int j, double fov, int light_intensity, bool has_inter, int id, Vector& P, Vector& N){
 	Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
 	if (has_inter) {
-		pixel_intensity = s.objects[id]->albedo * (light_intensity * std::max(0., dot((light_position - P).getNormalized(), N))) / (light_position - P).getNorm2();
+		pixel_intensity = s.shapes[id]->albedo * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
 	}
 	imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
 	imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert
@@ -285,8 +371,8 @@ void createImageGL(int i, int j, double fov, int light_intensity, bool has_inter
 void createImage3(int i, int j, double fov, double nb_sampling){
 	// methode de Box Muller (anti-alliasing) ->PIXEL SAMPLING
 	// créé un nombre aléatoire qui suit une gaussienne, ça permet d'envoyer un rayon pas forcement au centre
-	double r1 = uniform(generator);
-	double r2 = uniform(generator);
+	double r1 = generator_rand(generator);
+	double r2 = generator_rand(generator);
 	double dx = sqrt(-2 * log(r1)) * cos(2 * M_PI * r2);
 	double dy = sqrt(-2 * log(r1)) * sin(2 * M_PI * r2);
 	Vector direction(j - W / 2 + 0.5 * dx , i - H / 2 + 0.5 * dy, - W / (2 * tan(fov / 2)));
@@ -304,7 +390,7 @@ void createImage3(int i, int j, double fov, double nb_sampling){
 
 void intersect(int option, double pixelsampling) {
 	double fov = fov_cam * M_PI / 180; // angle de vue
-	int light_intensity = s.intensite_lumiere / 1000;
+	int light_intensity = s.light_intensity / 1000;
 	for (int i = 0; i < H; i++) {
 		for (int j = 0; j < W; j++) {
 			Vector direction((j - W / 2) + ang[0], (i - H / 2) + ang[1], - W / (2 * tan(fov / 2)));

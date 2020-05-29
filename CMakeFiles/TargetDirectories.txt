@@ -1,3 +1,0 @@
-/home/louis/Bureau/projet/final/RayTracer/CMakeFiles/rebuild_cache.dir
-/home/louis/Bureau/projet/final/RayTracer/CMakeFiles/raytracer.dir
-/home/louis/Bureau/projet/final/RayTracer/CMakeFiles/edit_cache.dir
