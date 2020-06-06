@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
-#include "reader.h"
+#include "Reader.h"
 #include <fstream>
 #include <string>
-class Color{
+
+class ComplexRayTracer{
     private:
         double carre(double n){
             return n * n;
@@ -95,7 +96,7 @@ class Color{
         }
 
     public:
-        Color(){};
+        ComplexRayTracer(){};
         // const enmpeche de faire une copie locale
         // On fait une fonction recursive pour calculer la reflexion des surfaces
         // La fonction renvoie la couleur du pixel obtenu en envoyant un rayon R dans la scene S

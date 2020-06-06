@@ -9,7 +9,7 @@ MESSAGE(STATUS "C++11 enabled. ")
 
 SET(SRCS
   Vector.cpp
-  test.cpp
+  Main.cpp
  )
 
 add_executable(raytracer ${SRCS})
