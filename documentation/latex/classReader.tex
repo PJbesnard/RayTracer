@@ -1,0 +1,82 @@
+\hypertarget{classReader}{}\section{Reader Class Reference}
+\label{classReader}\index{Reader@{Reader}}
+
+
+Allows to create a J\+S\+ON file reader.  
+
+
+
+
+{\ttfamily \#include $<$Reader.\+h$>$}
+
+
+
+Collaboration diagram for Reader\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classReader_aa518eb8a4a05f69e9efc9bf4589535a7}{read\+\_\+scene\+\_\+file} (const char $\ast$filename, \hyperlink{classScene}{Scene} \&scene, \hyperlink{classVector}{Vector} \&l, int \&f)
+\begin{DoxyCompactList}\small\item\em Read a J\+S\+ON file and create a scene with objects of this file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScene}{Scene} \hyperlink{classReader_a84df722b393b595cded39ae6654febc5}{s}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{classReader_afaf8e383240d7b48bdb85aeb41bdafa5}{light\+\_\+position\+\_\+value}
+\item 
+int \hyperlink{classReader_a64e54cbd23dd64f4a46e9c0c7218b5fe}{fov\+\_\+cam}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows to create a J\+S\+ON file reader. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classReader_aa518eb8a4a05f69e9efc9bf4589535a7}\label{classReader_aa518eb8a4a05f69e9efc9bf4589535a7}} 
+\index{Reader@{Reader}!read\+\_\+scene\+\_\+file@{read\+\_\+scene\+\_\+file}}
+\index{read\+\_\+scene\+\_\+file@{read\+\_\+scene\+\_\+file}!Reader@{Reader}}
+\subsubsection{\texorpdfstring{read\+\_\+scene\+\_\+file()}{read\_scene\_file()}}
+{\footnotesize\ttfamily void Reader\+::read\+\_\+scene\+\_\+file (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{\hyperlink{classScene}{Scene} \&}]{scene,  }\item[{\hyperlink{classVector}{Vector} \&}]{l,  }\item[{int \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a J\+S\+ON file and create a scene with objects of this file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: the file name \\
+\hline
+{\em scene} & \+: the scene where objects will be placed \\
+\hline
+{\em l} & \+: the light position \\
+\hline
+{\em f} & \+: the fov of the camera \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classReader_a64e54cbd23dd64f4a46e9c0c7218b5fe}\label{classReader_a64e54cbd23dd64f4a46e9c0c7218b5fe}} 
+\index{Reader@{Reader}!fov\+\_\+cam@{fov\+\_\+cam}}
+\index{fov\+\_\+cam@{fov\+\_\+cam}!Reader@{Reader}}
+\subsubsection{\texorpdfstring{fov\+\_\+cam}{fov\_cam}}
+{\footnotesize\ttfamily int Reader\+::fov\+\_\+cam}
+
+the fov of the camera \mbox{\Hypertarget{classReader_afaf8e383240d7b48bdb85aeb41bdafa5}\label{classReader_afaf8e383240d7b48bdb85aeb41bdafa5}} 
+\index{Reader@{Reader}!light\+\_\+position\+\_\+value@{light\+\_\+position\+\_\+value}}
+\index{light\+\_\+position\+\_\+value@{light\+\_\+position\+\_\+value}!Reader@{Reader}}
+\subsubsection{\texorpdfstring{light\+\_\+position\+\_\+value}{light\_position\_value}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Reader\+::light\+\_\+position\+\_\+value}
+
+the light position \mbox{\Hypertarget{classReader_a84df722b393b595cded39ae6654febc5}\label{classReader_a84df722b393b595cded39ae6654febc5}} 
+\index{Reader@{Reader}!s@{s}}
+\index{s@{s}!Reader@{Reader}}
+\subsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene} Reader\+::s}
+
+the scene 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Reader_8h}{Reader.\+h}\end{DoxyCompactItemize}

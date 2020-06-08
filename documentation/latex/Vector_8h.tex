@@ -1,0 +1,311 @@
+\hypertarget{Vector_8h}{}\section{Vector.\+h File Reference}
+\label{Vector_8h}\index{Vector.\+h@{Vector.\+h}}
+
+
+Define all objects that can be placed in a scene.  
+
+
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Vector.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVector}{Vector}
+\begin{DoxyCompactList}\small\item\em Allows to create vectors and apply operations to them. \end{DoxyCompactList}\item 
+class \hyperlink{classRay}{Ray}
+\begin{DoxyCompactList}\small\item\em defines a ray \end{DoxyCompactList}\item 
+class \hyperlink{classShape}{Shape}
+\begin{DoxyCompactList}\small\item\em Allows to create shape and define a color, or if this shape will be a mirror, transparent, his brightness and his phong exponant. \end{DoxyCompactList}\item 
+class \hyperlink{classTriangle}{Triangle}
+\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classTriangle}{Triangle} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
+class \hyperlink{classRectangle}{Rectangle}
+\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classRectangle}{Rectangle} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
+class \hyperlink{classCylinder}{Cylinder}
+\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classCylinder}{Cylinder} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
+class \hyperlink{classSphere}{Sphere}
+\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classSphere}{Sphere} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
+class \hyperlink{classScene}{Scene}
+\begin{DoxyCompactList}\small\item\em Allows to create a scene, add object to it and calculate intersection with them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a5998f4e2fd7d0a0e40314a27ff662a41}{operator+} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do additions on vectors Method that define + for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_ac941dc3987e6510561b0eacab2b3382f}{operator-\/} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do substraction on vectors Method that define substraction for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a5b08d95d2b7bad60d33f8352c12fd634}{operator-\/} (const \hyperlink{classVector}{Vector} \&x)
+\begin{DoxyCompactList}\small\item\em Allows to get the negative vector Method that define -\/vector. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a20bfaeb9df7d4a53a9890e43fd83b659}{operator$\ast$} (double x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do multiplications on vectors Method that define multiplications for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_ab79f0d30aafe27506da7a0efc85943e4}{operator$\ast$} (const \hyperlink{classVector}{Vector} \&y, double x)
+\begin{DoxyCompactList}\small\item\em Allows to do multiplications on vectors Method that define multiplications for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_aca0d1af5090bc005f2d4944d2fdb390d}{operator$\ast$} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do multiplications on vectors Method that define multiplications for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a6709a3f8763ab7f7fd0493064d4ec8f1}{operator/} (const \hyperlink{classVector}{Vector} \&x, double y)
+\begin{DoxyCompactList}\small\item\em Allows to do divisions on vectors Method that define divisions for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a657d3cfea697b04c2dcf2bdb59af1fa8}{operator/} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do divisions on vectors Method that define divisions for vectors. \end{DoxyCompactList}\item 
+double \hyperlink{Vector_8h_ac94f155a730dc92fa3616e23bd7cf74f}{dot} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do scalar product on vectors Method that define scalar product for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a447be7c2b8d226242362e40dbaf2cba2}{cross} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do vectorial product on vectors Method that define vectorial product for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a8e2a51184230b2587000a8a66410ffed}{random\+\_\+cos} (const \hyperlink{classVector}{Vector} \&N)
+\begin{DoxyCompactList}\small\item\em Allows to do apply a random cos on a vector. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_ac276b3e746fb0797abcd5d8e761f0d10}{random\+\_\+phong} (const \hyperlink{classVector}{Vector} \&R, double phong\+\_\+expo)
+\begin{DoxyCompactList}\small\item\em Allows to do apply a random phong on a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define all objects that can be placed in a scene. 
+
+\begin{DoxyAuthor}{Author}
+Pierre-\/\+Jean Besnard \& Louis Billaut 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Vector_8h_a447be7c2b8d226242362e40dbaf2cba2}\label{Vector_8h_a447be7c2b8d226242362e40dbaf2cba2}} 
+\index{Vector.\+h@{Vector.\+h}!cross@{cross}}
+\index{cross@{cross}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} cross (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do vectorial product on vectors Method that define vectorial product for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_ac94f155a730dc92fa3616e23bd7cf74f}\label{Vector_8h_ac94f155a730dc92fa3616e23bd7cf74f}} 
+\index{Vector.\+h@{Vector.\+h}!dot@{dot}}
+\index{dot@{dot}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily double dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do scalar product on vectors Method that define scalar product for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a20bfaeb9df7d4a53a9890e43fd83b659}\label{Vector_8h_a20bfaeb9df7d4a53a9890e43fd83b659}} 
+\index{Vector.\+h@{Vector.\+h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do multiplications on vectors Method that define multiplications for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x value \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_ab79f0d30aafe27506da7a0efc85943e4}\label{Vector_8h_ab79f0d30aafe27506da7a0efc85943e4}} 
+\index{Vector.\+h@{Vector.\+h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{y,  }\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Allows to do multiplications on vectors Method that define multiplications for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & \+: the y vector \\
+\hline
+{\em x} & \+: the x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_aca0d1af5090bc005f2d4944d2fdb390d}\label{Vector_8h_aca0d1af5090bc005f2d4944d2fdb390d}} 
+\index{Vector.\+h@{Vector.\+h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do multiplications on vectors Method that define multiplications for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a5998f4e2fd7d0a0e40314a27ff662a41}\label{Vector_8h_a5998f4e2fd7d0a0e40314a27ff662a41}} 
+\index{Vector.\+h@{Vector.\+h}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do additions on vectors Method that define + for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_ac941dc3987e6510561b0eacab2b3382f}\label{Vector_8h_ac941dc3987e6510561b0eacab2b3382f}} 
+\index{Vector.\+h@{Vector.\+h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do substraction on vectors Method that define substraction for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a5b08d95d2b7bad60d33f8352c12fd634}\label{Vector_8h_a5b08d95d2b7bad60d33f8352c12fd634}} 
+\index{Vector.\+h@{Vector.\+h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Allows to get the negative vector Method that define -\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the negative vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a6709a3f8763ab7f7fd0493064d4ec8f1}\label{Vector_8h_a6709a3f8763ab7f7fd0493064d4ec8f1}} 
+\index{Vector.\+h@{Vector.\+h}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do divisions on vectors Method that define divisions for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a657d3cfea697b04c2dcf2bdb59af1fa8}\label{Vector_8h_a657d3cfea697b04c2dcf2bdb59af1fa8}} 
+\index{Vector.\+h@{Vector.\+h}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} operator/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{x,  }\item[{const \hyperlink{classVector}{Vector} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Allows to do divisions on vectors Method that define divisions for vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: the x vector \\
+\hline
+{\em y} & \+: the y vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_a8e2a51184230b2587000a8a66410ffed}\label{Vector_8h_a8e2a51184230b2587000a8a66410ffed}} 
+\index{Vector.\+h@{Vector.\+h}!random\+\_\+cos@{random\+\_\+cos}}
+\index{random\+\_\+cos@{random\+\_\+cos}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+cos()}{random\_cos()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} random\+\_\+cos (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{N }\end{DoxyParamCaption})}
+
+
+
+Allows to do apply a random cos on a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \+: the N vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Vector_8h_ac276b3e746fb0797abcd5d8e761f0d10}\label{Vector_8h_ac276b3e746fb0797abcd5d8e761f0d10}} 
+\index{Vector.\+h@{Vector.\+h}!random\+\_\+phong@{random\+\_\+phong}}
+\index{random\+\_\+phong@{random\+\_\+phong}!Vector.\+h@{Vector.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+phong()}{random\_phong()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} random\+\_\+phong (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{R,  }\item[{double}]{phong\+\_\+expo }\end{DoxyParamCaption})}
+
+
+
+Allows to do apply a random phong on a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \+: the R vector \\
+\hline
+{\em phong\+\_\+expo} & \+: the phong exponent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector which is the result of the operation 
+\end{DoxyReturn}

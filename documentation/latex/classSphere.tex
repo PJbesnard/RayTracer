@@ -1,0 +1,117 @@
+\hypertarget{classSphere}{}\section{Sphere Class Reference}
+\label{classSphere}\index{Sphere@{Sphere}}
+
+
+Allows to create \hyperlink{classSphere}{Sphere} shape and to calculate intersections with him.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+
+
+Inheritance diagram for Sphere\+:
+% FIG 0
+
+
+Collaboration diagram for Sphere\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSphere_afe0be46169fd4012f7f5bfe791f8f8c6}{Sphere} (const \hyperlink{classVector}{Vector} \&origin, double ray, const \hyperlink{classVector}{Vector} \&color, bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}, bool \hyperlink{classShape_ab8da3fc4606e66dea941ec23d25f53ef}{is\+\_\+transparent}, double \hyperlink{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}{spec}=0, double \hyperlink{classShape_a2556fca106f9503e6dfb4da703c28f7f}{phong\+\_\+expo}=1000)
+\begin{DoxyCompactList}\small\item\em Constructor Constructor of the sphere class. \end{DoxyCompactList}\item 
+bool \hyperlink{classSphere_acbd56a4021638361d354e21d68f98e62}{intersection} (const \hyperlink{classRay}{Ray} \&d, \hyperlink{classVector}{Vector} \&P, \hyperlink{classVector}{Vector} \&N, double \&t) const
+\begin{DoxyCompactList}\small\item\em Calculate the intersection of a ray with the sphere if it exist Calculate the P intersection point, N the normal intersection and t the intensity with the d ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{classSphere_a5b1afbcb994e9fd1b369ee4897af94af}{O}
+\item 
+double \hyperlink{classSphere_ae63beb5380ccbbb9ba820c54d03d02ef}{R}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows to create \hyperlink{classSphere}{Sphere} shape and to calculate intersections with him. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSphere_afe0be46169fd4012f7f5bfe791f8f8c6}\label{classSphere_afe0be46169fd4012f7f5bfe791f8f8c6}} 
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\subsubsection{\texorpdfstring{Sphere()}{Sphere()}}
+{\footnotesize\ttfamily Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{origin,  }\item[{double}]{ray,  }\item[{const \hyperlink{classVector}{Vector} \&}]{color,  }\item[{bool}]{is\+\_\+mirror,  }\item[{bool}]{is\+\_\+transparent,  }\item[{double}]{spec = {\ttfamily 0},  }\item[{double}]{phong\+\_\+expo = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor Constructor of the sphere class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & \+: the origin point of the sphere \\
+\hline
+{\em ray} & \+: the ray of the sphere \\
+\hline
+{\em color} & \+: the color of the sphere, representing by a vector, R\+GB \\
+\hline
+{\em is\+\_\+mirror} & \+: true if the sphere is a mirror, false either \\
+\hline
+{\em is\+\_\+transparent} & \+: true if the sphere is transparent, false either \\
+\hline
+{\em spec} & \+: the brightness of the sphere, representing by a double \\
+\hline
+{\em phong\+\_\+expo} & \+: the phong exponent of the sphere, representing by a double \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSphere_acbd56a4021638361d354e21d68f98e62}\label{classSphere_acbd56a4021638361d354e21d68f98e62}} 
+\index{Sphere@{Sphere}!intersection@{intersection}}
+\index{intersection@{intersection}!Sphere@{Sphere}}
+\subsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily bool Sphere\+::intersection (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{d,  }\item[{\hyperlink{classVector}{Vector} \&}]{P,  }\item[{\hyperlink{classVector}{Vector} \&}]{N,  }\item[{double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate the intersection of a ray with the sphere if it exist Calculate the P intersection point, N the normal intersection and t the intensity with the d ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \+: the ray within the sphere intersect \\
+\hline
+{\em P} & \+: the intersection point wich will be calculated \\
+\hline
+{\em N} & \+: the normal wich will be calculated \\
+\hline
+{\em t} & \+: the intensity wich will be calculated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the light intersect the sphere, false either 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_a5e193b10da347bdc1f7e9acf6e6779ba}{Shape}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSphere_a5b1afbcb994e9fd1b369ee4897af94af}\label{classSphere_a5b1afbcb994e9fd1b369ee4897af94af}} 
+\index{Sphere@{Sphere}!O@{O}}
+\index{O@{O}!Sphere@{Sphere}}
+\subsubsection{\texorpdfstring{O}{O}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Sphere\+::O}
+
+the origin points of the sphere \mbox{\Hypertarget{classSphere_ae63beb5380ccbbb9ba820c54d03d02ef}\label{classSphere_ae63beb5380ccbbb9ba820c54d03d02ef}} 
+\index{Sphere@{Sphere}!R@{R}}
+\index{R@{R}!Sphere@{Sphere}}
+\subsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily double Sphere\+::R}
+
+the ray of the sphere 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

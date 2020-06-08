@@ -1,13 +1,30 @@
+/*!
+ * \file Reader.h
+ * \brief Define JSON readers
+ * \author Pierre-Jean Besnard & Louis Billaut
+ * \version 1.0
+ */
 #include <stdio.h>
 #include <iostream>
 #include <vector>
-#include "Scene.h"
+#include "Vector.h"
 #include <fstream>
 #include <string>
 #include <jsoncpp/json/json.h>
 
+/*! \class Reader
+ * \brief Allows to create a JSON file reader
+ */
 class Reader {
 	public:
+		/*!
+		 * \brief Read a JSON file and create a scene with objects of this file
+		 * 
+		 * \param filename : the file name
+		 * \param scene : the scene where objects will be placed
+		 * \param l : the light position
+		 * \param f : the fov of the camera
+		 */
 		void read_scene_file(const char* filename, Scene& scene, Vector& l, int &f){
 			std::ifstream file(filename);
 			Json::Reader reader;
@@ -22,11 +39,16 @@ class Reader {
 			l = light_position_value;
 			f = fov_cam;
 		}
-		Scene s;
-		Vector light_position_value;
-		int fov_cam;
+		Scene s; /*!< the scene */
+		Vector light_position_value; /*!< the light position */
+		int fov_cam; /*!< the fov of the camera */
 
 	private: 
+		/*!
+		 * \brief Get rectangles from the JSON file
+		 * 
+		 * \param obj : a JSON object
+		 */
 		void get_rectangles_from_file(Json::Value obj){
 			const Json::Value& rectangles = obj["rectangles"];
 			for (int i = 0; i < rectangles.size(); i++){
@@ -42,6 +64,11 @@ class Reader {
 			}
 		}
 
+		/*!
+		 * \brief Get triangles from the JSON file
+		 * 
+		 * \param obj : a JSON object
+		 */
 		void get_triangles_from_file(Json::Value obj){
 			const Json::Value& triangles = obj["triangles"];
 			for (int i = 0; i < triangles.size(); i++){
@@ -56,6 +83,11 @@ class Reader {
 			}
 		}
 
+		/*!
+		 * \brief Get cylinders from the JSON file
+		 * 
+		 * \param obj : a JSON object
+		 */
 		void get_cylinders_from_file(Json::Value obj){
 			const Json::Value& cylinders = obj["cylinders"];
 			for (int i = 0; i < cylinders.size(); i++){ 
@@ -68,6 +100,11 @@ class Reader {
 			}
 		}
 
+		/*!
+		 * \brief Get spheres from the JSON file
+		 * 
+		 * \param obj : a JSON object
+		 */
 		void get_spheres_from_file(Json::Value obj){
 			const Json::Value& spheres = obj["spheres"];
 			for (int i = 0; i < spheres.size(); i++){
@@ -87,6 +124,11 @@ class Reader {
 			}
 		}
 
+		/*!
+		 * \brief Get the light and the fov of the camera from the JSON file
+		 * 
+		 * \param obj : a JSON object
+		 */
 		void get_light_and_cam_from_file(Json::Value obj){
 			const Json::Value& light_intensity_value = obj["light_intensity"];
 			const Json::Value& light_position = obj["light_position"];

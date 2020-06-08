@@ -1,0 +1,137 @@
+\hypertarget{classShape}{}\section{Shape Class Reference}
+\label{classShape}\index{Shape@{Shape}}
+
+
+Allows to create shape and define a color, or if this shape will be a mirror, transparent, his brightness and his phong exponant.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+
+
+Inheritance diagram for Shape\+:
+% FIG 0
+
+
+Collaboration diagram for Shape\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classShape_ac15c3dd4d56ded4efccf75f820cce913}{Shape} (const \hyperlink{classVector}{Vector} \&color, bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}, bool \hyperlink{classShape_ab8da3fc4606e66dea941ec23d25f53ef}{is\+\_\+transparent}, double \hyperlink{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}{spec}, double \hyperlink{classShape_a2556fca106f9503e6dfb4da703c28f7f}{phong\+\_\+expo})
+\begin{DoxyCompactList}\small\item\em Constructor Constructor of the \hyperlink{classShape}{Shape} class. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classShape_a5e193b10da347bdc1f7e9acf6e6779ba}{intersection} (const \hyperlink{classRay}{Ray} \&d, \hyperlink{classVector}{Vector} \&P, \hyperlink{classVector}{Vector} \&N, double \&t) const =0
+\begin{DoxyCompactList}\small\item\em Calculate the intersection of a ray with the shape if it exist Calculate the P intersection point, N the normal intersection and t the intensity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{classShape_afc030a51120dade6f5c5b90c2d60087e}{albedo}
+\item 
+bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}
+\item 
+bool \hyperlink{classShape_ab8da3fc4606e66dea941ec23d25f53ef}{is\+\_\+transparent}
+\item 
+double \hyperlink{classShape_a2556fca106f9503e6dfb4da703c28f7f}{phong\+\_\+expo}
+\item 
+double \hyperlink{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}{spec}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows to create shape and define a color, or if this shape will be a mirror, transparent, his brightness and his phong exponant. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShape_ac15c3dd4d56ded4efccf75f820cce913}\label{classShape_ac15c3dd4d56ded4efccf75f820cce913}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{color,  }\item[{bool}]{is\+\_\+mirror,  }\item[{bool}]{is\+\_\+transparent,  }\item[{double}]{spec,  }\item[{double}]{phong\+\_\+expo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor Constructor of the \hyperlink{classShape}{Shape} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \+: the color of the shape, representing by a vector, R\+GB \\
+\hline
+{\em is\+\_\+mirror} & \+: true if the shape is a mirror, false either \\
+\hline
+{\em is\+\_\+transparent} & \+: true if the shape is transparent, false either \\
+\hline
+{\em spec} & \+: the brightness of the shape, representing by a double \\
+\hline
+{\em phong\+\_\+expo} & \+: the phong exponent of the shape, representing by a double \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classShape_a5e193b10da347bdc1f7e9acf6e6779ba}\label{classShape_a5e193b10da347bdc1f7e9acf6e6779ba}} 
+\index{Shape@{Shape}!intersection@{intersection}}
+\index{intersection@{intersection}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily virtual bool Shape\+::intersection (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{d,  }\item[{\hyperlink{classVector}{Vector} \&}]{P,  }\item[{\hyperlink{classVector}{Vector} \&}]{N,  }\item[{double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculate the intersection of a ray with the shape if it exist Calculate the P intersection point, N the normal intersection and t the intensity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \+: the ray within the triangle intersect \\
+\hline
+{\em P} & \+: the intersection point wich will be calculated \\
+\hline
+{\em N} & \+: the normal wich will be calculated \\
+\hline
+{\em t} & \+: the intensity wich will be calculated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the light intersect the shape, false either 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classSphere_acbd56a4021638361d354e21d68f98e62}{Sphere}, \hyperlink{classCylinder_a0f3c6cca45e3efa5250dc45ebcff81e5}{Cylinder}, \hyperlink{classRectangle_a423b89ddb4be31c3ff22a86dcf076b08}{Rectangle}, and \hyperlink{classTriangle_a3290db0f1a807905ff0293b209e32dbf}{Triangle}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classShape_afc030a51120dade6f5c5b90c2d60087e}\label{classShape_afc030a51120dade6f5c5b90c2d60087e}} 
+\index{Shape@{Shape}!albedo@{albedo}}
+\index{albedo@{albedo}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{albedo}{albedo}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Shape\+::albedo}
+
+color of the vector, R\+GB \mbox{\Hypertarget{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}\label{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}} 
+\index{Shape@{Shape}!is\+\_\+mirror@{is\+\_\+mirror}}
+\index{is\+\_\+mirror@{is\+\_\+mirror}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{is\+\_\+mirror}{is\_mirror}}
+{\footnotesize\ttfamily bool Shape\+::is\+\_\+mirror}
+
+define if the shape is a mirror or not \mbox{\Hypertarget{classShape_ab8da3fc4606e66dea941ec23d25f53ef}\label{classShape_ab8da3fc4606e66dea941ec23d25f53ef}} 
+\index{Shape@{Shape}!is\+\_\+transparent@{is\+\_\+transparent}}
+\index{is\+\_\+transparent@{is\+\_\+transparent}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{is\+\_\+transparent}{is\_transparent}}
+{\footnotesize\ttfamily bool Shape\+::is\+\_\+transparent}
+
+define if the shape is transparent or not \mbox{\Hypertarget{classShape_a2556fca106f9503e6dfb4da703c28f7f}\label{classShape_a2556fca106f9503e6dfb4da703c28f7f}} 
+\index{Shape@{Shape}!phong\+\_\+expo@{phong\+\_\+expo}}
+\index{phong\+\_\+expo@{phong\+\_\+expo}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{phong\+\_\+expo}{phong\_expo}}
+{\footnotesize\ttfamily double Shape\+::phong\+\_\+expo}
+
+the phong exponent of the shape \mbox{\Hypertarget{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}\label{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}} 
+\index{Shape@{Shape}!spec@{spec}}
+\index{spec@{spec}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily double Shape\+::spec}
+
+the brightness of the shape 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

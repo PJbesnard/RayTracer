@@ -1,0 +1,158 @@
+\hypertarget{classScene}{}\section{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+Allows to create a scene, add object to it and calculate intersection with them.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+
+
+Collaboration diagram for Scene\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507}} 
+\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene} ()
+\begin{DoxyCompactList}\small\item\em Constructor Constructor of the scene class. \end{DoxyCompactList}\item 
+bool \hyperlink{classScene_a2006d6fa80e8bf343da5a8ed3d1f5140}{intersection} (const \hyperlink{classRay}{Ray} \&d, \hyperlink{classVector}{Vector} \&P, \hyperlink{classVector}{Vector} \&N, int \&id, double \&min) const
+\begin{DoxyCompactList}\small\item\em Calculate the intersection of a ray with objects of the scene Calculate the P intersection point, N the normal intersection and id the id of the intersected object. \end{DoxyCompactList}\item 
+void \hyperlink{classScene_aa1cc40909ebbe9ed5933566d9a3663d2}{add\+Sphere} (const \hyperlink{classSphere}{Sphere} $\ast$\hyperlink{test_8cpp_aecc1396fc611f6e71d5d70228e7b089a}{s})
+\begin{DoxyCompactList}\small\item\em Add sphere object to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classScene_a2a8ed37427379fed62a9a71e7d266223}{add\+Triangle} (const \hyperlink{classTriangle}{Triangle} $\ast$\hyperlink{test_8cpp_aecc1396fc611f6e71d5d70228e7b089a}{s})
+\begin{DoxyCompactList}\small\item\em Add triangle object to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classScene_ab0c2696e58d79a68f76073dd6f7fb9b7}{add\+Cylinder} (const \hyperlink{classCylinder}{Cylinder} $\ast$\hyperlink{test_8cpp_aecc1396fc611f6e71d5d70228e7b089a}{s})
+\begin{DoxyCompactList}\small\item\em Add cylinder object to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classScene_a926114a1fed32caabbc716c213e70637}{add\+Rectangle} (const \hyperlink{classRectangle}{Rectangle} $\ast$\hyperlink{test_8cpp_aecc1396fc611f6e71d5d70228e7b089a}{s})
+\begin{DoxyCompactList}\small\item\em Add rectangle object to the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ const \hyperlink{classShape}{Shape} $\ast$ $>$ \hyperlink{classScene_aff4c301d0f6f9fccbbc60859e6f40749}{shapes}
+\item 
+\hyperlink{classSphere}{Sphere} $\ast$ \hyperlink{classScene_a3bcb1d5f1d3f81df9d5f4a69933fa353}{light}
+\item 
+double \hyperlink{classScene_a4ddb7fa3ea0fab202f34b48450f5bf2b}{light\+\_\+intensity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows to create a scene, add object to it and calculate intersection with them. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScene_ab0c2696e58d79a68f76073dd6f7fb9b7}\label{classScene_ab0c2696e58d79a68f76073dd6f7fb9b7}} 
+\index{Scene@{Scene}!add\+Cylinder@{add\+Cylinder}}
+\index{add\+Cylinder@{add\+Cylinder}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{add\+Cylinder()}{addCylinder()}}
+{\footnotesize\ttfamily void Scene\+::add\+Cylinder (\begin{DoxyParamCaption}\item[{const \hyperlink{classCylinder}{Cylinder} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add cylinder object to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: the cylinder wich will be added to the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_a926114a1fed32caabbc716c213e70637}\label{classScene_a926114a1fed32caabbc716c213e70637}} 
+\index{Scene@{Scene}!add\+Rectangle@{add\+Rectangle}}
+\index{add\+Rectangle@{add\+Rectangle}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{add\+Rectangle()}{addRectangle()}}
+{\footnotesize\ttfamily void Scene\+::add\+Rectangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classRectangle}{Rectangle} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add rectangle object to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: the rectangle wich will be added to the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_aa1cc40909ebbe9ed5933566d9a3663d2}\label{classScene_aa1cc40909ebbe9ed5933566d9a3663d2}} 
+\index{Scene@{Scene}!add\+Sphere@{add\+Sphere}}
+\index{add\+Sphere@{add\+Sphere}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{add\+Sphere()}{addSphere()}}
+{\footnotesize\ttfamily void Scene\+::add\+Sphere (\begin{DoxyParamCaption}\item[{const \hyperlink{classSphere}{Sphere} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add sphere object to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: the sphere wich will be added to the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_a2a8ed37427379fed62a9a71e7d266223}\label{classScene_a2a8ed37427379fed62a9a71e7d266223}} 
+\index{Scene@{Scene}!add\+Triangle@{add\+Triangle}}
+\index{add\+Triangle@{add\+Triangle}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{add\+Triangle()}{addTriangle()}}
+{\footnotesize\ttfamily void Scene\+::add\+Triangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classTriangle}{Triangle} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add triangle object to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: the triangle wich will be added to the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_a2006d6fa80e8bf343da5a8ed3d1f5140}\label{classScene_a2006d6fa80e8bf343da5a8ed3d1f5140}} 
+\index{Scene@{Scene}!intersection@{intersection}}
+\index{intersection@{intersection}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily bool Scene\+::intersection (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{d,  }\item[{\hyperlink{classVector}{Vector} \&}]{P,  }\item[{\hyperlink{classVector}{Vector} \&}]{N,  }\item[{int \&}]{id,  }\item[{double \&}]{min }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the intersection of a ray with objects of the scene Calculate the P intersection point, N the normal intersection and id the id of the intersected object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \+: the ray within the sphere intersect \\
+\hline
+{\em P} & \+: the intersection point wich will be calculated \\
+\hline
+{\em N} & \+: the normal wich will be calculated \\
+\hline
+{\em id} & \+: the id of the object wich will be intersected \\
+\hline
+{\em min} & \+: the minimal value of intensity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the light intersect the sphere, false either 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classScene_a3bcb1d5f1d3f81df9d5f4a69933fa353}\label{classScene_a3bcb1d5f1d3f81df9d5f4a69933fa353}} 
+\index{Scene@{Scene}!light@{light}}
+\index{light@{light}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{light}{light}}
+{\footnotesize\ttfamily \hyperlink{classSphere}{Sphere}$\ast$ Scene\+::light}
+
+light of the scene represented by a sphere \mbox{\Hypertarget{classScene_a4ddb7fa3ea0fab202f34b48450f5bf2b}\label{classScene_a4ddb7fa3ea0fab202f34b48450f5bf2b}} 
+\index{Scene@{Scene}!light\+\_\+intensity@{light\+\_\+intensity}}
+\index{light\+\_\+intensity@{light\+\_\+intensity}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{light\+\_\+intensity}{light\_intensity}}
+{\footnotesize\ttfamily double Scene\+::light\+\_\+intensity}
+
+light intensity of the scene \mbox{\Hypertarget{classScene_aff4c301d0f6f9fccbbc60859e6f40749}\label{classScene_aff4c301d0f6f9fccbbc60859e6f40749}} 
+\index{Scene@{Scene}!shapes@{shapes}}
+\index{shapes@{shapes}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{shapes}{shapes}}
+{\footnotesize\ttfamily std\+::vector$<$const \hyperlink{classShape}{Shape}$\ast$$>$ Scene\+::shapes}
+
+objects of the scene 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classVector}{}\section{Vector Class Reference}
+\label{classVector}\index{Vector@{Vector}}
+
+
+Allows to create vectors and apply operations to them.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector_aae7788ced072bf8f5bb4b0fcb6fb6ad2}{Vector} (double x=0, double y=0, double z=0)
+\begin{DoxyCompactList}\small\item\em Constructor Constructor of \hyperlink{classVector}{Vector} class. \end{DoxyCompactList}\item 
+const double \& \hyperlink{classVector_ae78b4372ba99bf1f50cb76078f48df99}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Allows to get the x, y or z position of the vector Method that define \mbox{[}\mbox{]} for vector, \mbox{[}0\mbox{]} to get x, \mbox{[}1\mbox{]} to get y, \mbox{[}2\mbox{]} to get z. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{classVector_a99c9023bbfa62e9de503a19d5adf2527}{reflect} (const \hyperlink{classVector}{Vector} \&N) const
+\begin{DoxyCompactList}\small\item\em Allows to get the reflection of the vector regarding to the normal. \end{DoxyCompactList}\item 
+double \hyperlink{classVector_ac9ec1192304bb0bae095eaa958187db2}{get\+Norm} ()
+\begin{DoxyCompactList}\small\item\em Calculate the normal of this vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_a8797efbdda6679ab6da996e7ebaaae36}\label{classVector_a8797efbdda6679ab6da996e7ebaaae36}} 
+void \hyperlink{classVector_a8797efbdda6679ab6da996e7ebaaae36}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize this vector. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{classVector_ae247b2764bb2832be89c5721386d003a}{get\+Normalized\+Copy} ()
+\begin{DoxyCompactList}\small\item\em Get this normalized vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows to create vectors and apply operations to them. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVector_aae7788ced072bf8f5bb4b0fcb6fb6ad2}\label{classVector_aae7788ced072bf8f5bb4b0fcb6fb6ad2}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily Vector\+::\+Vector (\begin{DoxyParamCaption}\item[{double}]{x = {\ttfamily 0},  }\item[{double}]{y = {\ttfamily 0},  }\item[{double}]{z = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor Constructor of \hyperlink{classVector}{Vector} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: x position of the vector \\
+\hline
+{\em y} & \+: y position of the vector \\
+\hline
+{\em z} & \+: z position of the vector \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVector_ac9ec1192304bb0bae095eaa958187db2}\label{classVector_ac9ec1192304bb0bae095eaa958187db2}} 
+\index{Vector@{Vector}!get\+Norm@{get\+Norm}}
+\index{get\+Norm@{get\+Norm}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{get\+Norm()}{getNorm()}}
+{\footnotesize\ttfamily double Vector\+::get\+Norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the normal of this vector. 
+
+\begin{DoxyReturn}{Returns}
+normal of this vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ae247b2764bb2832be89c5721386d003a}\label{classVector_ae247b2764bb2832be89c5721386d003a}} 
+\index{Vector@{Vector}!get\+Normalized\+Copy@{get\+Normalized\+Copy}}
+\index{get\+Normalized\+Copy@{get\+Normalized\+Copy}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{get\+Normalized\+Copy()}{getNormalizedCopy()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Vector\+::get\+Normalized\+Copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get this normalized vector. 
+
+\begin{DoxyReturn}{Returns}
+this normalized vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ae78b4372ba99bf1f50cb76078f48df99}\label{classVector_ae78b4372ba99bf1f50cb76078f48df99}} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const double\& Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allows to get the x, y or z position of the vector Method that define \mbox{[}\mbox{]} for vector, \mbox{[}0\mbox{]} to get x, \mbox{[}1\mbox{]} to get y, \mbox{[}2\mbox{]} to get z. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \+: index of the desired coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the desired coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a99c9023bbfa62e9de503a19d5adf2527}\label{classVector_a99c9023bbfa62e9de503a19d5adf2527}} 
+\index{Vector@{Vector}!reflect@{reflect}}
+\index{reflect@{reflect}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{reflect()}{reflect()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Vector\+::reflect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector} \&}]{N }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allows to get the reflection of the vector regarding to the normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \+: the normal vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reflected vector regarding to the normal 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

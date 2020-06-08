@@ -4,6 +4,14 @@ Vector operator+(const Vector& x, const Vector &y) {
 	return Vector(x[0] + y[0], x[1] + y[1], x[2] + y[2]);
 }
 
+Vector operator-(const Vector& x, const Vector& y) {
+	return Vector(x[0] - y[0], x[1] - y[1], x[2] - y[2]);
+}
+
+Vector operator-(const Vector& x) {
+	return Vector(-x[0], -x[1], -x[2]);
+}
+
 Vector operator*(double x, const Vector &y) {
 	return Vector(x * y[0], x * y[1], x * y[2]);
 }
@@ -14,14 +22,6 @@ Vector operator*(const Vector &y, double x) {
 
 Vector operator*(const Vector &x, const Vector &y) {
 	return Vector(x[0] * y[0], x[1] * y[1], x[2] * y[2]);
-}
-
-Vector operator-(const Vector& x, const Vector& y) {
-	return Vector(x[0] - y[0], x[1] - y[1], x[2] - y[2]);
-}
-
-Vector operator-(const Vector& x) {
-	return Vector(-x[0], -x[1], -x[2]);
 }
 
 Vector operator/(const Vector &x, double y) {
@@ -61,4 +61,5 @@ Vector random_phong(const Vector& R, double phong_exposant){
 	tang1.normalize();
 	Vector tang2 = cross(tang1, R);
 	return rand_loc_dir[2] * R + rand_loc_dir[0] * tang1 + rand_loc_dir[1] * tang2;	
+
 }
