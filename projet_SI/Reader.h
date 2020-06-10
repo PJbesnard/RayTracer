@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
-#include "Vector.h"
+#include "Scene.h"
 #include <fstream>
 #include <string>
 #include <jsoncpp/json/json.h>
@@ -138,4 +138,3 @@ class Reader {
 			fov_cam = fov.asInt();
 		}
 };
-

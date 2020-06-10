@@ -1,0 +1,200 @@
+\hypertarget{Main_8cpp}{}\section{Main.\+cpp File Reference}
+\label{Main_8cpp}\index{Main.\+cpp@{Main.\+cpp}}
+
+
+Main file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$G\+L/glut.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}include/\+C\+L\+I11.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$jsoncpp/json/json.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Raytracer.\+h\char`\"{}}\newline
+Include dependency graph for Main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Main_8cpp_ad5c98db739242ec888bf78711be303df}{save\+\_\+img} (const char $\ast$filename, const unsigned char $\ast$pixels, int \hyperlink{Main_8cpp_a2dd51e03005d5cb52315290d27f61870}{W}, int \hyperlink{Main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}{H})
+\begin{DoxyCompactList}\small\item\em Save an image in ppm format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Main_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}\label{Main_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}} 
+void \hyperlink{Main_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display} ()
+\begin{DoxyCompactList}\small\item\em display the open\+GL image \end{DoxyCompactList}\item 
+void \hyperlink{Main_8cpp_a014f5b090096c1a38304827319bd169d}{key\+Board} (unsigned char key, int x, int y)
+\begin{DoxyCompactList}\small\item\em Detect keyboard keys utilisation and move the camera. \end{DoxyCompactList}\item 
+void \hyperlink{Main_8cpp_a26384e6450546ecedcbcf88f12ed9160}{create\+Window} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Create an open\+GL window for the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Main_8cpp_a82d1e48f3299e1b3cbeda7e6a3795a7e}\label{Main_8cpp_a82d1e48f3299e1b3cbeda7e6a3795a7e}} 
+void \hyperlink{Main_8cpp_a82d1e48f3299e1b3cbeda7e6a3795a7e}{keyboard\+\_\+help} ()
+\begin{DoxyCompactList}\small\item\em Show the keyboard utilisation on console. \end{DoxyCompactList}\item 
+int \hyperlink{Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function Manage arguments and show/create images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}{H} = 1024
+\item 
+int \hyperlink{Main_8cpp_a2dd51e03005d5cb52315290d27f61870}{W} = 1024
+\item 
+unsigned char \hyperlink{Main_8cpp_a92ebae258b9cd4407b2510c3d18633ee}{image} \mbox{[}1024 $\ast$1024 $\ast$3\mbox{]}
+\item 
+unsigned char \hyperlink{Main_8cpp_a14f4a56f227f3a41cfa66a08ee0cee36}{image\+GL} \mbox{[}1024 $\ast$1024 $\ast$3\mbox{]}
+\item 
+double \hyperlink{Main_8cpp_a9fe883a18727d129289b149e5f0305eb}{cam} \mbox{[}3\mbox{]} = \{0, 0, 0\}
+\item 
+double \hyperlink{Main_8cpp_a861ee06bf1e430650b4437260a119635}{ang} \mbox{[}2\mbox{]} = \{0, 0\}
+\item 
+\hyperlink{classScene}{Scene} \hyperlink{Main_8cpp_aecc1396fc611f6e71d5d70228e7b089a}{s}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{Main_8cpp_a7e3f38517518eb6f7e4744b4fe12fcd2}{light\+\_\+position\+\_\+value}
+\item 
+int \hyperlink{Main_8cpp_afac324b61ac0563c734fcdb81d98e344}{fov\+\_\+cam} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main file. 
+
+\begin{DoxyAuthor}{Author}
+Pierre-\/\+Jean Besnard \& Louis Billaut 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Main_8cpp_a26384e6450546ecedcbcf88f12ed9160}\label{Main_8cpp_a26384e6450546ecedcbcf88f12ed9160}} 
+\index{Main.\+cpp@{Main.\+cpp}!create\+Window@{create\+Window}}
+\index{create\+Window@{create\+Window}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{create\+Window()}{createWindow()}}
+{\footnotesize\ttfamily void create\+Window (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Create an open\+GL window for the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & \+: the main argc \\
+\hline
+{\em argv} & \+: the main argv \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Main_8cpp_a014f5b090096c1a38304827319bd169d}\label{Main_8cpp_a014f5b090096c1a38304827319bd169d}} 
+\index{Main.\+cpp@{Main.\+cpp}!key\+Board@{key\+Board}}
+\index{key\+Board@{key\+Board}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{key\+Board()}{keyBoard()}}
+{\footnotesize\ttfamily void key\+Board (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Detect keyboard keys utilisation and move the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \+: he keyboard key \\
+\hline
+{\em x} & \+: the x mouse click position \\
+\hline
+{\em y} & \+: the y mouse click position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{Main.\+cpp@{Main.\+cpp}!main@{main}}
+\index{main@{main}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function Manage arguments and show/create images. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em argc} & \+: number of arguments \\
+\hline
+{\em argv} & \+: list of arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Main_8cpp_ad5c98db739242ec888bf78711be303df}\label{Main_8cpp_ad5c98db739242ec888bf78711be303df}} 
+\index{Main.\+cpp@{Main.\+cpp}!save\+\_\+img@{save\+\_\+img}}
+\index{save\+\_\+img@{save\+\_\+img}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{save\+\_\+img()}{save\_img()}}
+{\footnotesize\ttfamily void save\+\_\+img (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{const unsigned char $\ast$}]{pixels,  }\item[{int}]{W,  }\item[{int}]{H }\end{DoxyParamCaption})}
+
+
+
+Save an image in ppm format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: the file name of the image \\
+\hline
+{\em pixels} & \+: the image represented by a char$\ast$ \\
+\hline
+{\em W} & \+: width of the image \\
+\hline
+{\em H} & \+: height of the image \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Main_8cpp_a861ee06bf1e430650b4437260a119635}\label{Main_8cpp_a861ee06bf1e430650b4437260a119635}} 
+\index{Main.\+cpp@{Main.\+cpp}!ang@{ang}}
+\index{ang@{ang}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{ang}{ang}}
+{\footnotesize\ttfamily double ang\mbox{[}2\mbox{]} = \{0, 0\}}
+
+the angle of the open\+GL camera \mbox{\Hypertarget{Main_8cpp_a9fe883a18727d129289b149e5f0305eb}\label{Main_8cpp_a9fe883a18727d129289b149e5f0305eb}} 
+\index{Main.\+cpp@{Main.\+cpp}!cam@{cam}}
+\index{cam@{cam}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{cam}{cam}}
+{\footnotesize\ttfamily double cam\mbox{[}3\mbox{]} = \{0, 0, 0\}}
+
+coordinates of the open\+GL camera \mbox{\Hypertarget{Main_8cpp_afac324b61ac0563c734fcdb81d98e344}\label{Main_8cpp_afac324b61ac0563c734fcdb81d98e344}} 
+\index{Main.\+cpp@{Main.\+cpp}!fov\+\_\+cam@{fov\+\_\+cam}}
+\index{fov\+\_\+cam@{fov\+\_\+cam}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{fov\+\_\+cam}{fov\_cam}}
+{\footnotesize\ttfamily int fov\+\_\+cam = 15}
+
+the fov of the camera \mbox{\Hypertarget{Main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}\label{Main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}} 
+\index{Main.\+cpp@{Main.\+cpp}!H@{H}}
+\index{H@{H}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily int H = 1024}
+
+the height of the window \mbox{\Hypertarget{Main_8cpp_a92ebae258b9cd4407b2510c3d18633ee}\label{Main_8cpp_a92ebae258b9cd4407b2510c3d18633ee}} 
+\index{Main.\+cpp@{Main.\+cpp}!image@{image}}
+\index{image@{image}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily unsigned char image\mbox{[}1024 $\ast$1024 $\ast$3\mbox{]}}
+
+the ppm image \mbox{\Hypertarget{Main_8cpp_a14f4a56f227f3a41cfa66a08ee0cee36}\label{Main_8cpp_a14f4a56f227f3a41cfa66a08ee0cee36}} 
+\index{Main.\+cpp@{Main.\+cpp}!image\+GL@{image\+GL}}
+\index{image\+GL@{image\+GL}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{image\+GL}{imageGL}}
+{\footnotesize\ttfamily unsigned char image\+GL\mbox{[}1024 $\ast$1024 $\ast$3\mbox{]}}
+
+the open\+GL ppm image \mbox{\Hypertarget{Main_8cpp_a7e3f38517518eb6f7e4744b4fe12fcd2}\label{Main_8cpp_a7e3f38517518eb6f7e4744b4fe12fcd2}} 
+\index{Main.\+cpp@{Main.\+cpp}!light\+\_\+position\+\_\+value@{light\+\_\+position\+\_\+value}}
+\index{light\+\_\+position\+\_\+value@{light\+\_\+position\+\_\+value}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{light\+\_\+position\+\_\+value}{light\_position\_value}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} light\+\_\+position\+\_\+value}
+
+the light position \mbox{\Hypertarget{Main_8cpp_aecc1396fc611f6e71d5d70228e7b089a}\label{Main_8cpp_aecc1396fc611f6e71d5d70228e7b089a}} 
+\index{Main.\+cpp@{Main.\+cpp}!s@{s}}
+\index{s@{s}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene} s}
+
+the scene \mbox{\Hypertarget{Main_8cpp_a2dd51e03005d5cb52315290d27f61870}\label{Main_8cpp_a2dd51e03005d5cb52315290d27f61870}} 
+\index{Main.\+cpp@{Main.\+cpp}!W@{W}}
+\index{W@{W}!Main.\+cpp@{Main.\+cpp}}
+\subsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily int W = 1024}
+
+the width of the window 

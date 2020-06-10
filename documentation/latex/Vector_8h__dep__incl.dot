@@ -4,9 +4,13 @@ digraph "Vector.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node5 [label="Vector.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="Reader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Reader_8h.html",tooltip="Define JSON readers. "];
+  Node6 [label="Shape.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Shape_8h.html",tooltip="Define all objects that can be placed in a scene. "];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="Raytracer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Raytracer_8h.html",tooltip="Define all reaytracers that can be used in this project. "];
+  Node7 [label="Scene.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Scene_8h.html",tooltip="Define the scene. "];
   Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="test.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test_8cpp.html",tooltip="Main file. "];
+  Node8 [label="Reader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Reader_8h.html",tooltip="Define JSON readers. "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Raytracer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Raytracer_8h.html",tooltip="Define all reaytracers that can be used in this project. "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Main_8cpp.html",tooltip="Main file. "];
 }

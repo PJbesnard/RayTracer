@@ -7,7 +7,7 @@ Allows to create shape and define a color, or if this shape will be a mirror, tr
 
 
 
-{\ttfamily \#include $<$Vector.\+h$>$}
+{\ttfamily \#include $<$Shape.\+h$>$}
 
 
 
@@ -20,14 +20,14 @@ Collaboration diagram for Shape\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classShape_ac15c3dd4d56ded4efccf75f820cce913}{Shape} (const \hyperlink{classVector}{Vector} \&color, bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}, bool \hyperlink{classShape_ab8da3fc4606e66dea941ec23d25f53ef}{is\+\_\+transparent}, double \hyperlink{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}{spec}, double \hyperlink{classShape_a2556fca106f9503e6dfb4da703c28f7f}{phong\+\_\+expo})
+\hyperlink{classShape_ac15c3dd4d56ded4efccf75f820cce913}{Shape} (const \hyperlink{classVector}{Vector} \&\hyperlink{classShape_adb97857c268315aed7861e5204c2485b}{color}, bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}, bool \hyperlink{classShape_ab8da3fc4606e66dea941ec23d25f53ef}{is\+\_\+transparent}, double \hyperlink{classShape_a60ef96ac5dea3478fdd1ab320e4c3bef}{spec}, double \hyperlink{classShape_a2556fca106f9503e6dfb4da703c28f7f}{phong\+\_\+expo})
 \begin{DoxyCompactList}\small\item\em Constructor Constructor of the \hyperlink{classShape}{Shape} class. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classShape_a5e193b10da347bdc1f7e9acf6e6779ba}{intersection} (const \hyperlink{classRay}{Ray} \&d, \hyperlink{classVector}{Vector} \&P, \hyperlink{classVector}{Vector} \&N, double \&t) const =0
 \begin{DoxyCompactList}\small\item\em Calculate the intersection of a ray with the shape if it exist Calculate the P intersection point, N the normal intersection and t the intensity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classVector}{Vector} \hyperlink{classShape_afc030a51120dade6f5c5b90c2d60087e}{albedo}
+\hyperlink{classVector}{Vector} \hyperlink{classShape_adb97857c268315aed7861e5204c2485b}{color}
 \item 
 bool \hyperlink{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}{is\+\_\+mirror}
 \item 
@@ -100,11 +100,11 @@ Implemented in \hyperlink{classSphere_acbd56a4021638361d354e21d68f98e62}{Sphere}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classShape_afc030a51120dade6f5c5b90c2d60087e}\label{classShape_afc030a51120dade6f5c5b90c2d60087e}} 
-\index{Shape@{Shape}!albedo@{albedo}}
-\index{albedo@{albedo}!Shape@{Shape}}
-\subsubsection{\texorpdfstring{albedo}{albedo}}
-{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Shape\+::albedo}
+\mbox{\Hypertarget{classShape_adb97857c268315aed7861e5204c2485b}\label{classShape_adb97857c268315aed7861e5204c2485b}} 
+\index{Shape@{Shape}!color@{color}}
+\index{color@{color}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector} Shape\+::color}
 
 color of the vector, R\+GB \mbox{\Hypertarget{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}\label{classShape_a0ead7657fa5e4c7862fe1cedd670a9e5}} 
 \index{Shape@{Shape}!is\+\_\+mirror@{is\+\_\+mirror}}
@@ -134,4 +134,4 @@ the brightness of the shape
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{Vector_8h}{Vector.\+h}\end{DoxyCompactItemize}
+\hyperlink{Shape_8h}{Shape.\+h}\end{DoxyCompactItemize}

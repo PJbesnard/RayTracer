@@ -122,7 +122,7 @@ class ComplexRayTracer{
             bool intersection_light = s.intersection(rayLight, B_light, A_light, sphere_id_light, t_light); // On regarde si il y a une intersection entre le point qui va vers la lumiere et la lumiere
             //We send again a ray towards the light to know if there is an intersection, we add 0.99 because the light is a sphere
             if (intersection_light && ((t_light * t_light) < d_light * 0.99)) *pixel_color = Vector(0, 0, 0); 
-            else *pixel_color = (s.light_intensity / (4 * M_PI * d_light) * std::max(0., dot(A, omi)) * dot(Np, -omi) / dot(axeOP, rand_dir)) * (M_PI) * ((1. - s.shapes[id] -> spec) * s.shapes[id] -> albedo / M_PI + PhongRef(omi, r.direction, A, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> albedo);
+            else *pixel_color = (s.light_intensity / (4 * M_PI * d_light) * std::max(0., dot(A, omi)) * dot(Np, -omi) / dot(axeOP, rand_dir)) * (M_PI) * ((1. - s.shapes[id] -> spec) * s.shapes[id] -> color / M_PI + PhongRef(omi, r.direction, A, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> color);
         }
 
         //Add indirect lighting
@@ -156,8 +156,8 @@ class ComplexRayTracer{
             Ray random_ray(P + 0.001 * N, random_direction);
             double proba_phong = (s.shapes[id] -> phong_expo + 1) / (2. * M_PI) * std::pow(dot(R, random_direction), s.shapes[id] -> phong_expo);
             double proba_globale = p * dot(N, random_direction) / (2. * M_PI) + (1. - p) * proba_phong;	
-            if (sample_diffuse) *pixel_color = *pixel_color + getPixelColor(random_ray, s, recursion + 1) * s.shapes[id] -> albedo * dot(N, random_direction) / M_PI / proba_globale;
-            else *pixel_color = *pixel_color + getPixelColor(random_ray, s, recursion + 1) * dot(N, random_direction) * PhongRef(random_direction, r.direction, N, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> albedo / proba_globale;
+            if (sample_diffuse) *pixel_color = *pixel_color + getPixelColor(random_ray, s, recursion + 1) * s.shapes[id] -> color * dot(N, random_direction) / M_PI / proba_globale;
+            else *pixel_color = *pixel_color + getPixelColor(random_ray, s, recursion + 1) * dot(N, random_direction) * PhongRef(random_direction, r.direction, N, s.shapes[id] -> phong_expo) * s.shapes[id] -> spec * s.shapes[id] -> color / proba_globale;
             return 0;	
         }
 
@@ -277,7 +277,7 @@ class FlatPaintingRayTracer{
          */
         void setPixelColor(const Scene& s, int i, int j, double fov, bool has_inter, unsigned char image[1024*1024*3], int H, int W, int id){
             Vector pixel_intensity(0,0,0); // trois cmposantes du coup on prend un vecteur (A CHANGER)
-            if (has_inter) pixel_intensity = s.shapes[id] -> albedo;
+            if (has_inter) pixel_intensity = s.shapes[id] -> color;
             image[((H - i - 1) * W + j) * 3 + 0] = pixel_intensity[0] * 255; // rouge 
             image[((H - i - 1) * W + j) * 3 + 1] = pixel_intensity[1] * 255; // vert
             image[((H - i - 1) * W + j) * 3 + 2] = pixel_intensity[2] * 255; // bleu
@@ -347,7 +347,7 @@ class SimpleRayTracer{
             int light_intensity = s.light_intensity / 1000;
             Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
             if (has_inter) {
-                pixel_intensity = s.shapes[id]->albedo * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
+                pixel_intensity = s.shapes[id]->color * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
             }
             image[((H - i - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
             image[((H - i - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert
@@ -374,7 +374,7 @@ class SimpleRayTracer{
             Vector pixel_intensity = 0; // trois cmposantes du coup on prend un vecteur (A CHANGER)
             int light_intensity = s.light_intensity / 1000;
             if (has_inter) {
-                pixel_intensity = s.shapes[id]->albedo * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
+                pixel_intensity = s.shapes[id]->color * (light_intensity * std::max(0., dot((light_position_value - P).getNormalizedCopy(), N))) / (light_position_value - P).getNorm();
             }
             imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 0] = std::min(255., std::max(0., pixel_intensity[0])); // rouge 
             imageGL[((H - (H - i - 1) - 1) * W + j) * 3 + 1] = std::min(255., std::max(0., pixel_intensity[1])); // vert

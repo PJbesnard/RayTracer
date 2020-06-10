@@ -2,7 +2,7 @@
 \label{Vector_8h}\index{Vector.\+h@{Vector.\+h}}
 
 
-Define all objects that can be placed in a scene.  
+Define Vectors and Rays.  
 
 
 {\ttfamily \#include $<$random$>$}\newline
@@ -19,19 +19,7 @@ This graph shows which files directly or indirectly include this file\+:
 class \hyperlink{classVector}{Vector}
 \begin{DoxyCompactList}\small\item\em Allows to create vectors and apply operations to them. \end{DoxyCompactList}\item 
 class \hyperlink{classRay}{Ray}
-\begin{DoxyCompactList}\small\item\em defines a ray \end{DoxyCompactList}\item 
-class \hyperlink{classShape}{Shape}
-\begin{DoxyCompactList}\small\item\em Allows to create shape and define a color, or if this shape will be a mirror, transparent, his brightness and his phong exponant. \end{DoxyCompactList}\item 
-class \hyperlink{classTriangle}{Triangle}
-\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classTriangle}{Triangle} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
-class \hyperlink{classRectangle}{Rectangle}
-\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classRectangle}{Rectangle} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
-class \hyperlink{classCylinder}{Cylinder}
-\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classCylinder}{Cylinder} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
-class \hyperlink{classSphere}{Sphere}
-\begin{DoxyCompactList}\small\item\em Allows to create \hyperlink{classSphere}{Sphere} shape and to calculate intersections with him. \end{DoxyCompactList}\item 
-class \hyperlink{classScene}{Scene}
-\begin{DoxyCompactList}\small\item\em Allows to create a scene, add object to it and calculate intersection with them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em defines a ray \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,16 +41,16 @@ class \hyperlink{classScene}{Scene}
 \begin{DoxyCompactList}\small\item\em Allows to do divisions on vectors Method that define divisions for vectors. \end{DoxyCompactList}\item 
 double \hyperlink{Vector_8h_ac94f155a730dc92fa3616e23bd7cf74f}{dot} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
 \begin{DoxyCompactList}\small\item\em Allows to do scalar product on vectors Method that define scalar product for vectors. \end{DoxyCompactList}\item 
-\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a447be7c2b8d226242362e40dbaf2cba2}{cross} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
-\begin{DoxyCompactList}\small\item\em Allows to do vectorial product on vectors Method that define vectorial product for vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_ac276b3e746fb0797abcd5d8e761f0d10}{random\+\_\+phong} (const \hyperlink{classVector}{Vector} \&R, double phong\+\_\+expo)
+\begin{DoxyCompactList}\small\item\em Allows to do apply a random phong on a vector. \end{DoxyCompactList}\item 
 \hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a8e2a51184230b2587000a8a66410ffed}{random\+\_\+cos} (const \hyperlink{classVector}{Vector} \&N)
 \begin{DoxyCompactList}\small\item\em Allows to do apply a random cos on a vector. \end{DoxyCompactList}\item 
-\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_ac276b3e746fb0797abcd5d8e761f0d10}{random\+\_\+phong} (const \hyperlink{classVector}{Vector} \&R, double phong\+\_\+expo)
-\begin{DoxyCompactList}\small\item\em Allows to do apply a random phong on a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classVector}{Vector} \hyperlink{Vector_8h_a447be7c2b8d226242362e40dbaf2cba2}{cross} (const \hyperlink{classVector}{Vector} \&x, const \hyperlink{classVector}{Vector} \&y)
+\begin{DoxyCompactList}\small\item\em Allows to do vectorial product on vectors Method that define vectorial product for vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Define all objects that can be placed in a scene. 
+Define Vectors and Rays. 
 
 \begin{DoxyAuthor}{Author}
 Pierre-\/\+Jean Besnard \& Louis Billaut 
