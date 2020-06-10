@@ -70,7 +70,7 @@ void display() {
  * \param y : the y mouse click position
  */
 void keyBoard(unsigned char key, int x, int y){
-	SimpleRayTracer rayTracer3(2);
+	SimpleRayTracer rayTracer3;
 	bool isMoving = false;
 	switch(key){
 		case 'z':
@@ -127,7 +127,7 @@ void keyBoard(unsigned char key, int x, int y){
 			break;
 	}
 	if(isMoving){
-		rayTracer3.createImage(s, fov_cam, imageGL, H, W, ang, cam, light_position_value);
+		rayTracer3.createImage(s, fov_cam, imageGL, H, W, ang, cam, 2);
 		glutPostRedisplay();
 	}
 }
@@ -188,8 +188,7 @@ int main(int argc, char *argv[]){
 
 
 	FlatPaintingRayTracer rayTracer1;
-	SimpleRayTracer rayTracer2(1);
-	SimpleRayTracer rayTracer3(2);
+	SimpleRayTracer rayTracer3;
 	ComplexRayTracer rayTracer4;
 
 	switch(number) {
@@ -199,8 +198,8 @@ int main(int argc, char *argv[]){
 		case 2:
 			createWindow(argc, argv);
 			keyboard_help();
-			rayTracer2.createImage(s, fov_cam, image, H, W, ang, cam, light_position_value);
-			rayTracer3.createImage(s, fov_cam, imageGL, H, W, ang, cam, light_position_value);
+			rayTracer3.createImage(s, fov_cam, imageGL, H, W, ang, cam, 2);
+			rayTracer3.createImage(s, fov_cam, image, H, W, ang, cam, 1);
 			glutDisplayFunc(display);
 			break;
 		case 3:
